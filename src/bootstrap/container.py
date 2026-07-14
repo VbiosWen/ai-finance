@@ -9,12 +9,14 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
+from typing import Any
 
 from domain.shared.ai_tools import AITool
 from domain.shared.prompts import DEFAULT_AGENT_PROMPT, Prompt
 from infrastructure.ai.agent_factory import create_react_agent
-from infrastructure.ai.llm_client import LLMClientFactory
+from infrastructure.ai.llm_client_factory import LLMClientFactory
 from infrastructure.ai.tool_adapter import adapt_ai_tools
+from infrastructure.config.llm_config import LLMConfig
 from interfaces.ai.react_agent import LangChainAgentService
 
 logger = logging.getLogger("ai-finance")
@@ -36,28 +38,24 @@ class Container:
 
 def build_container(
     *,
-    provider: str | None = None,
+    config: LLMConfig | None = None,
     system_prompt: Prompt | None = None,
     tools: list[AITool] | None = None,
-    temperature: float = 0.1,
-    max_tokens: int | None = None,
     skip_ai: bool = False,
 ) -> Container:
     """构建并返回组合根容器。
 
     装配链路：
-    1. 创建 LLMClientFactory → 生成 BaseChatModel
+    1. 根据 LLMConfig 创建 LLM 实例
     2. 加载系统提示词
     3. 收集领域工具 → 适配为 LangChain Tool
     4. create_react_agent 创建 LangGraph Agent
     5. 包装为 LangChainAgentService（实现 AgentService 端口）
 
     Args:
-        provider: LLM provider（"openai" 或 "anthropic"），默认取环境变量。
+        config: LLM 配置对象。为 None 时尝试从 config/config.json 加载。
         system_prompt: 系统提示词值对象，默认使用 DEFAULT_AGENT_PROMPT。
         tools: 领域工具实例列表。
-        temperature: LLM 温度参数。
-        max_tokens: 最大输出 token 数。
         skip_ai: 跳过 AI 组件装配，返回最小容器（用于测试或非 AI 场景）。
 
     Returns:
@@ -69,15 +67,14 @@ def build_container(
 
     container = Container()
 
-    # 1. LLM 工厂
+    # 1. LLM
     try:
-        llm_factory = LLMClientFactory(provider=provider)
-        llm = llm_factory.create_chat_model(
-            temperature=temperature,
-            max_tokens=max_tokens,
-        )
+        if config is None:
+            config = LLMConfig.from_json("config/config.json")
+        llm_factory = LLMClientFactory(config)
+        llm: Any = llm_factory.create_llm()
         container.llm_factory = llm_factory
-    except (RuntimeError, ValueError) as exc:
+    except (ValueError, FileNotFoundError) as exc:
         logger.warning("无法创建 LLM: %s，AI 功能将不可用", exc)
         return container
 
@@ -101,5 +98,5 @@ def build_container(
     # 5. 包装为 AgentService
     container.agent_service = LangChainAgentService(agent)
 
-    logger.info("组合根装配完成: LLM=%s, 工具数=%d", llm_factory.provider, len(lc_tools))
+    logger.info("组合根装配完成: model=%s, 工具数=%d", config.model, len(lc_tools))
     return container

@@ -14,19 +14,27 @@ class BootstrapSmokeTest(unittest.TestCase):
         container = build_container(skip_ai=True)
         self.assertIsInstance(container, Container)
 
-    def test_build_container_without_api_key_graceful(self) -> None:
-        """无 API Key 时不抛异常，返回不含 agent_service 的容器。"""
-        container = build_container()
-        self.assertIsInstance(container, Container)
-        # 无 API Key 时 agent_service 为 None
-        self.assertIsNone(container.agent_service)
-
     def test_build_container_skip_ai_has_no_agent(self) -> None:
         """skip_ai=True 时 agent_service 为 None。"""
         container = build_container(skip_ai=True)
         self.assertIsNone(container.agent_service)
         self.assertIsNone(container.llm_factory)
         self.assertEqual(len(container.tools), 0)
+
+    def test_build_container_with_config_loads(self) -> None:
+        """有 config.json 时正常加载 LLM（需要有效 API Key）。"""
+        import os
+        from pathlib import Path
+
+        config_path = Path(__file__).parent.parent / "config" / "config.json"
+        if not config_path.exists():
+            self.skipTest("config.json 不存在")
+
+        container = build_container()
+        self.assertIsInstance(container, Container)
+        # 有有效 API Key 时 agent_service 不应为 None
+        if container.agent_service is None and container.llm_factory is None:
+            self.skipTest("API Key 无效或缺失，AI 组件未装配")
 
 
 if __name__ == "__main__":

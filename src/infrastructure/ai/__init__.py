@@ -6,7 +6,7 @@
 - llm_client: LLM provider 工厂（OpenAI / Anthropic）。
 """
 from infrastructure.ai.agent_factory import create_react_agent
-from infrastructure.ai.llm_client import LLMClientFactory
+from infrastructure.ai.llm_client_factory import LLMClientFactory
 from infrastructure.ai.tool_adapter import adapt_ai_tool, adapt_ai_tools
 
 __all__ = [

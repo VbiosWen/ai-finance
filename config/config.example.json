@@ -1,0 +1,7 @@
+{
+  "model": "deepseek-chat",
+  "api_key": null,
+  "temperature": 0.1,
+  "max_tokens": 4096,
+  "max_retries": 3
+}
