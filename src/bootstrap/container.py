@@ -72,7 +72,7 @@ def build_container(
         if config is None:
             config = LLMConfig.from_json("config/config.json")
         llm_factory = LLMClientFactory(config)
-        llm: Any = llm_factory.create_llm()
+        llm: Any = llm_factory.create_llm
         container.llm_factory = llm_factory
     except (ValueError, FileNotFoundError) as exc:
         logger.warning("无法创建 LLM: %s，AI 功能将不可用", exc)
