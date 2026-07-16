@@ -19,6 +19,7 @@ class LLMClientFactory:
     def create_llm(self) -> Any:
         if self._config.model.startswith("deepseek") :
             return self._create_deep_seek()
+        raise Exception("Unsupported model")
 
     def _create_deep_seek(self):
         return ChatDeepSeek(
