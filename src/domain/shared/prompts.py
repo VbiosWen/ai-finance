@@ -5,24 +5,18 @@ Prompt 内容是领域知识（如"如何稽核发票"的业务规则），
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
+from pydantic import BaseModel, Field
 
 
-@dataclass(frozen=True)
-class Prompt:
-    """系统提示词值对象（不可变）。
+class Prompt(BaseModel):
+    """系统提示词值对象（不可变）。"""
 
-    Attributes:
-        name: 提示词名称（如 "audit_agent"、"receiving_agent"）。
-        system_text: 系统提示词的完整文本。
-        version: 版本号，便于追踪 prompt 迭代。
-        description: 提示词用途简述。
-    """
+    name: str = Field(description="提示词名称")
+    system_text: str = Field(description="系统提示词的完整文本")
+    version: str = Field(default="1.0.0", description="版本号")
+    description: str = Field(default="", description="用途简述")
 
-    name: str
-    system_text: str
-    version: str = "1.0.0"
-    description: str = ""
+    model_config = {"frozen": True}
 
 
 # ---------------------------------------------------------------------------

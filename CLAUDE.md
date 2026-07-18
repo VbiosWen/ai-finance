@@ -75,12 +75,13 @@ uv add <package>
 8. **接口层只翻译**:把 HTTP/CLI 请求转成命令/查询并调用应用层;不含业务逻辑,不直接碰 domain 内部或数据库。
 9. **依赖注入集中在 bootstrap**:各层通过构造函数参数接收依赖,不在层内 `new` 具体实现。
 10. **统一语言**:命名对齐业务术语(发票 Invoice、稽核 AuditCase、收票 …)。
+11. **Pydantic 优先**:生成代码时**必须使用 Pydantic v2** 定义模型（实体、值对象、DTO、配置等），**禁止使用** `dataclasses.dataclass`。Pydantic 提供原生不可变(`frozen`)、类型校验、JSON 序列化等能力，dataclass 无法等价替代。例外：仅当需要兼容第三方库的 dataclass 接口时（如 LangChain 工具装饰器），经确认后方可使用。
 
 ## 技术栈(计划,尚未接入)
 
 - Web:**FastAPI**(入站适配器,置于 `interfaces`)
 - 持久化:**SQLAlchemy 2.0**(ORM 与仓储实现,置于 `infrastructure`)
-- 校验/序列化:**Pydantic v2**(用于 `interfaces` 请求/响应模型与 `application` 的 DTO;**不得泄漏到 domain**)
+- 数据建模:**Pydantic v2**（全项目统一使用，包括 `domain` 实体/值对象、`application` DTO、`interfaces` 请求/响应、`infrastructure` 配置；**禁止 dataclass**）
 - 数据库迁移:**Alembic**
 
 以上均未加入 `dependencies`;接入某项时用 `uv add`,并只在其所属层引用。

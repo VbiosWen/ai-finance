@@ -7,24 +7,19 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
+
+from pydantic import BaseModel, Field
 
 
-@dataclass(frozen=True)
-class ToolResult:
-    """工具执行结果（值对象）。
+class ToolResult(BaseModel):
+    """工具执行结果（值对象，不可变）。"""
 
-    Attributes:
-        success: 工具是否成功执行。
-        content: 返回给 LLM 的文本内容。
-        tool_name: 工具名称，便于日志追踪。
-        error: 失败时的错误信息。
-    """
+    success: bool = Field(description="是否成功执行")
+    content: str = Field(description="返回给 LLM 的文本内容")
+    tool_name: str = Field(description="工具名称")
+    error: str | None = Field(default=None, description="失败时的错误信息")
 
-    success: bool
-    content: str
-    tool_name: str
-    error: str | None = None
+    model_config = {"frozen": True}
 
 
 class AITool(ABC):
