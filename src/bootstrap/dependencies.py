@@ -5,18 +5,17 @@ Repository 和 NacosClient 在 lifespan 中启动和预热，
 """
 from __future__ import annotations
 
-import json
 import logging
 
 from fastapi import Depends, Request
 
 from bootstrap.container import Container, build_container
 from infrastructure.client.nacos import NacosClient
-from infrastructure.config.llm_config import LLMConfig
 from infrastructure.ports import (
     NacosAgentIdentityRepository,
     NacosSkillConfigRepository,
 )
+from infrastructure.ports.llm_config_repository import LLMConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
@@ -40,26 +39,19 @@ def get_skill_config_repo(request: Request) -> NacosSkillConfigRepository:
     """注入已预热的 SkillConfig 仓库。"""
     return request.app.state.skill_config_repo
 
+def get_llm_config_repo(request: Request) -> LLMConfigRepository:
+    """注入已预热的 LLM 配置仓库。"""
+    return request.app.state.llm_config_repo
+
 
 # ---------------------------------------------------------------------------
 # 业务依赖
 # ---------------------------------------------------------------------------
 
 
-async def get_llm_config(
-    client: NacosClient = Depends(get_nacos_client),
-) -> LLMConfig:
-    """从 Nacos 加载 LLMConfig，不可用时降级到本地文件。"""
-    raw = await client.get_config("llm-config", group="AI_FINANCE")
-    if raw:
-        logger.info("LLMConfig 来源: Nacos")
-        return LLMConfig(**json.loads(raw))
-    logger.info("LLMConfig 来源: 本地 config.json")
-    return LLMConfig.load()
-
-
 async def get_container(
-    config: LLMConfig = Depends(get_llm_config),
+    llm_repo: LLMConfigRepository = Depends(get_llm_config_repo),
 ) -> Container:
-    """注入已装配的 Container。"""
-    return await build_container(config=config)
+    """注入已装配的 Container（LLMConfig 从预热的仓库获取）。"""
+    return await build_container(config=llm_repo.get())
+

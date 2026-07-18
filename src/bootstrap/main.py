@@ -17,7 +17,7 @@ from fastapi import Depends, FastAPI
 
 from bootstrap.dependencies import (
     get_agent_identity_repo,
-    get_container,
+    get_llm_config_repo,
     get_nacos_client,
     get_skill_config_repo,
 )
@@ -26,6 +26,7 @@ from infrastructure.ports import (
     NacosAgentIdentityRepository,
     NacosSkillConfigRepository,
 )
+from infrastructure.ports.llm_config_repository import LLMConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
@@ -49,14 +50,8 @@ async def lifespan(app: FastAPI):
     client = NacosClient(cfg)
     await client.start()
     app.state.nacos_client = client
-    logger.info("Nacos 客户端已启动")
 
     # 预热：启动时加载配置仓库，避免首个请求等待
-    from infrastructure.ports import (
-        NacosAgentIdentityRepository,
-        NacosSkillConfigRepository,
-    )
-
     agent_repo = NacosAgentIdentityRepository(client)
     await agent_repo.load()
     app.state.agent_identity_repo = agent_repo
@@ -67,10 +62,14 @@ async def lifespan(app: FastAPI):
     app.state.skill_config_repo = skill_repo
     logger.info("SkillConfig 配置已预热")
 
+    llm_repo = LLMConfigRepository(client)
+    await llm_repo.load()
+    app.state.llm_config_repo = llm_repo
+    logger.info("LLMConfig 配置已预热")
+
     yield
 
     await client.stop()
-    logger.info("Nacos 客户端已关闭")
 
 
 # ---------------------------------------------------------------------------
