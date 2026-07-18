@@ -1,9 +1,11 @@
 """Agent 聚合根 —— AI 技能 Agent 的领域模型。
 
-Agent 是聚合根，持有：
+一个 Agent 专精一个技能（Single Skill Agent），持有：
 - 唯一标识 (AgentId)
-- 配置快照 (AgentPromptConfig，不可变值对象)
+- 配置快照 (AgentPromptConfig，不可变值对象，含 AgentIdentity + SkillConfig)
 - 工具端口 (list[AITool])
+
+多技能场景通过多个 Agent 实例组合实现。
 """
 from __future__ import annotations
 

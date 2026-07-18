@@ -26,7 +26,7 @@ from infrastructure.ports import (
     NacosAgentIdentityRepository,
     NacosSkillConfigRepository,
 )
-from infrastructure.ports.llm_config_repository import LLMConfigRepository
+from infrastructure.ports.nacos_llm_config_repository import NacosLLMConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
@@ -62,7 +62,7 @@ async def lifespan(app: FastAPI):
     app.state.skill_config_repo = skill_repo
     logger.info("SkillConfig 配置已预热")
 
-    llm_repo = LLMConfigRepository(client)
+    llm_repo = NacosLLMConfigRepository(client)
     await llm_repo.load()
     app.state.llm_config_repo = llm_repo
     logger.info("LLMConfig 配置已预热")

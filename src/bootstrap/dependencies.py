@@ -15,7 +15,7 @@ from infrastructure.ports import (
     NacosAgentIdentityRepository,
     NacosSkillConfigRepository,
 )
-from infrastructure.ports.llm_config_repository import LLMConfigRepository
+from infrastructure.ports.nacos_llm_config_repository import NacosLLMConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
@@ -39,7 +39,7 @@ def get_skill_config_repo(request: Request) -> NacosSkillConfigRepository:
     """注入已预热的 SkillConfig 仓库。"""
     return request.app.state.skill_config_repo
 
-def get_llm_config_repo(request: Request) -> LLMConfigRepository:
+def get_llm_config_repo(request: Request) -> NacosLLMConfigRepository:
     """注入已预热的 LLM 配置仓库。"""
     return request.app.state.llm_config_repo
 
@@ -50,7 +50,7 @@ def get_llm_config_repo(request: Request) -> LLMConfigRepository:
 
 
 async def get_container(
-    llm_repo: LLMConfigRepository = Depends(get_llm_config_repo),
+    llm_repo: NacosLLMConfigRepository = Depends(get_llm_config_repo),
 ) -> Container:
     """注入已装配的 Container（LLMConfig 从预热的仓库获取）。"""
     return await build_container(config=llm_repo.get())

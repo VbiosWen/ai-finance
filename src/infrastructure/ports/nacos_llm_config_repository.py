@@ -8,7 +8,7 @@ from infrastructure.config import LLMConfig
 logger = logging.getLogger("ai-finance")
 
 
-class LLMConfigRepository:
+class NacosLLMConfigRepository:
     """LLM 配置的 Nacos 适配器。
 
     从 Nacos 读取 JSON 格式的 LLMConfig，缓存 + 热更新。
