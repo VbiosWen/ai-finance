@@ -1,9 +1,10 @@
 """组合根：集中装配各层依赖。
 
 负责：
-- 创建基础设施（LLM 工厂、Agent 工厂、工具适配器）
-- 用 infrastructure 的实现装配 domain 定义的端口接口
+- 将已加载的 LLMConfig、Prompt、Tools 装配为可运行的 Agent
 - 组装为 Container 供 interfaces 层取用
+
+配置加载由调用方（如 FastAPI lifespan）在调用 build_container 之前完成。
 """
 from __future__ import annotations
 
@@ -26,17 +27,17 @@ logger = logging.getLogger("ai-finance")
 class Container:
     """持有已装配好的依赖，供 interfaces 与启动流程取用。"""
 
-    # AI 相关
+    # AI
     agent_service: LangChainAgentService | None = None
     llm_factory: LLMClientFactory | None = None
     tools: list[AITool] = field(default_factory=list)
 
-    # 随业务接入，例如：
+    # 随业务接入扩展，例如：
     #   invoice_repository: "InvoiceRepository"
     #   message_bus: "MessageBus"
 
 
-def build_container(
+async def build_container(
     *,
     config: LLMConfig | None = None,
     system_prompt: Prompt | None = None,
@@ -45,18 +46,12 @@ def build_container(
 ) -> Container:
     """构建并返回组合根容器。
 
-    装配链路：
-    1. 根据 LLMConfig 创建 LLM 实例
-    2. 加载系统提示词
-    3. 收集领域工具 → 适配为 LangChain Tool
-    4. create_react_agent 创建 LangGraph Agent
-    5. 包装为 LangChainAgentService（实现 AgentService 端口）
-
     Args:
-        config: LLM 配置对象。为 None 时尝试从 config/config.json 加载。
+        config: LLM 配置（由调用方提前加载）。
+                ``skip_ai=True`` 时可为 None。
         system_prompt: 系统提示词值对象，默认使用 DEFAULT_AGENT_PROMPT。
         tools: 领域工具实例列表。
-        skip_ai: 跳过 AI 组件装配，返回最小容器（用于测试或非 AI 场景）。
+        skip_ai: 跳过 AI 组件装配，返回最小容器（用于测试）。
 
     Returns:
         装配完成的 Container 实例。
@@ -65,18 +60,15 @@ def build_container(
         logger.info("跳过 AI 组件装配，返回最小容器")
         return Container()
 
+    if config is None:
+        raise ValueError("非 skip_ai 模式下必须提供 config 参数")
+
     container = Container()
 
     # 1. LLM
-    try:
-        if config is None:
-            config = LLMConfig.from_json("config/config.json")
-        llm_factory = LLMClientFactory(config)
-        llm: Any = llm_factory.create_llm
-        container.llm_factory = llm_factory
-    except (ValueError, FileNotFoundError) as exc:
-        logger.warning("无法创建 LLM: %s，AI 功能将不可用", exc)
-        return container
+    llm_factory = LLMClientFactory(config)
+    llm: Any = llm_factory.create_llm
+    container.llm_factory = llm_factory
 
     # 2. 系统提示词
     prompt = system_prompt or DEFAULT_AGENT_PROMPT

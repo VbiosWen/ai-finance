@@ -5,9 +5,9 @@
 - tool_adapter: 将领域 AITool 适配为 LangChain Tool。
 - llm_client: LLM provider 工厂（OpenAI / Anthropic）。
 """
-from infrastructure.ai.agent_factory import create_react_agent
-from infrastructure.ai.llm_client_factory import LLMClientFactory
-from infrastructure.ai.tool_adapter import adapt_ai_tool, adapt_ai_tools
+from .agent_factory import create_react_agent
+from .llm_client_factory import LLMClientFactory
+from .tool_adapter import adapt_ai_tool, adapt_ai_tools
 
 __all__ = [
     "LLMClientFactory",
