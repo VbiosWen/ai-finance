@@ -48,7 +48,6 @@ class SkillLookupTool(AITool):
         """
         self._repo = skill_repo
         self._refs: dict[str, SkillRef] = {r.name: r for r in skill_refs}
-        self._config_key = config_key
 
     async def execute(self, **kwargs: str) -> ToolResult:
         """查询技能详情。
@@ -86,7 +85,7 @@ class SkillLookupTool(AITool):
             )
 
         # ── 从仓储查找完整 SkillConfig ─────────────────────────
-        skills = self._repo.get(self._config_key)
+        skills = self._repo.get(name)
         for skill in skills:
             if skill.name == name:
                 return ToolResult(
