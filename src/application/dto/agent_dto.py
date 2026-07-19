@@ -41,24 +41,31 @@ class AgentResponse(BaseModel):
     reply: str = Field(description="Agent 的最终回复文本")
     thread_id: str | None = Field(default=None, description="对话线程 ID")
     tool_calls_count: int = Field(default=0, description="工具调用次数")
+    routed_skill: str | None = Field(
+        default=None, description="本次路由命中的技能名（动态路由时回填，可观测）"
+    )
 
 
 class AgentStreamEvent(BaseModel):
     """Agent 流式事件。
 
-    支持四种事件类型：
+    支持六种事件类型：
     - token: LLM 输出的增量文本片段。
     - tool_start: 工具开始执行。
     - tool_end: 工具执行完成。
     - done: 对话结束。
     - error: 发生错误。
+    - routing: 对话路由，本轮转接到的技能。
     """
 
-    event_type: Literal["token", "tool_start", "tool_end", "done", "error"] = Field(
+    event_type: Literal["token", "tool_start", "tool_end", "done", "error", "routing"] = Field(
         description="事件类型"
     )
     content: str = Field(default="", description="事件内容")
     tool_name: str | None = Field(default=None, description="工具名称（tool_start/tool_end 时有效）")
+    skill_name: str | None = Field(
+        default=None, description="路由命中的技能名（仅 routing 事件有值）"
+    )
     timestamp: datetime = Field(
         default_factory=datetime.utcnow,
         description="事件时间戳（UTC）",
