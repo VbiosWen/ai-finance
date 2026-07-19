@@ -122,13 +122,14 @@ data: {"event_type":"done","content":"","tool_name":null,"timestamp":"..."}
 
 ### 5.2 事件类型
 
-| `event` | 语义 | `content` | `tool_name` |
-|---|---|---|---|
-| `token` | LLM 输出的增量文本片段 | 文本增量 | `null` |
-| `tool_start` | 工具开始执行 | 工具输入（字符串化） | 工具名 |
-| `tool_end` | 工具执行完成 | 工具输出（字符串化） | 工具名 |
-| `done` | 对话结束（顶层链结束） | 空串 | `null` |
-| `error` | 流内发生异常 | 错误信息 | `null` |
+| `event` | 语义 | `content` | `tool_name` | `skill_name` |
+|---|---|---|---|---|
+| `token` | LLM 输出的增量文本片段 | 文本增量 | `null` | `null` |
+| `tool_start` | 工具开始执行 | 工具输入（字符串化） | 工具名 | `null` |
+| `tool_end` | 工具执行完成 | 工具输出（字符串化） | 工具名 | `null` |
+| `done` | 对话结束（顶层链结束） | 空串 | `null` | `null` |
+| `error` | 流内发生异常 | 错误信息 | `null` | `null` |
+| `routing` | 本轮对话转接到的技能 | 转接说明文本 | `null` | 目标技能名 |
 
 ### 5.3 `data` JSON schema
 
@@ -136,12 +137,15 @@ data: {"event_type":"done","content":"","tool_name":null,"timestamp":"..."}
 
 ```json
 {
-  "event_type": "token | tool_start | tool_end | done | error",
+  "event_type": "token | tool_start | tool_end | done | error | routing",
   "content": "string",
   "tool_name": "string | null",
+  "skill_name": "string | null",
   "timestamp": "ISO-8601 UTC"
 }
 ```
+
+> `skill_name` 为新增可选字段，仅 `routing` 事件有值，表示本轮路由命中的技能名。
 
 ### 5.4 心跳 / 结束 / 错误 / 断连语义
 

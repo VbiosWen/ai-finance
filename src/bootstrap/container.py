@@ -12,10 +12,16 @@ from contextlib import AsyncExitStack
 from pydantic import BaseModel, ConfigDict, Field
 
 from application.ports.agent_service import AgentService
+from application.services.routing_agent_service import RoutingAgentService
+from domain.services.routing_policy import RoutingPolicy
+from domain.shared.general_skill import GENERAL_SKILL
 from domain.shared.ai_tools import AITool
-from domain.shared.prompts import DEFAULT_AGENT_PROMPT
-from infrastructure.ai.agent_factory import create_react_agent
+from domain.value_objects.agent_identity import AgentIdentity
+from domain.value_objects.routing_config import RoutingConfig
+from domain.value_objects.skill_config import SkillConfig
 from infrastructure.ai.llm_client_factory import LLMClientFactory
+from infrastructure.ai.llm_intent_recognizer import LlmIntentRecognizer
+from infrastructure.ai.skill_agent_builder import build_agent_registry
 from infrastructure.ai.tool_adapter import adapt_ai_tools
 from infrastructure.client.database import DatabaseManager
 from infrastructure.client.nacos import NacosClient, NacosConfig
@@ -27,9 +33,10 @@ from infrastructure.ports.data_base_config_nacos_repository import (
     NacosPostgresConfigRepository,
 )
 from infrastructure.ports.nacos_llm_config_repository import NacosLLMConfigRepository
-from interfaces.ai.react_agent import LangChainAgentService
 
 logger = logging.getLogger("ai-finance")
+
+_DEFAULT_IDENTITY = AgentIdentity(persona="AI 账票助手", tones="专业简洁")
 
 
 class Container(BaseModel):
@@ -90,20 +97,27 @@ async def build_container() -> Container:
         llm_config_repo = NacosLLMConfigRepository(nacos_client)
         await llm_config_repo.load()
 
-        # 4. AI:LLM → 工具 → ReAct Agent → AgentService
+        # 4. AI:LLM + 多技能 Agent 注册表 + 意图识别 + 路由裁决 → RoutingAgentService
         llm_config = llm_config_repo.get()
         llm_factory = LLMClientFactory(llm_config)
-        llm = llm_factory.create_llm()
         tools: list[AITool] = []
-        lc_tools = adapt_ai_tools(tools)
-        agent = create_react_agent(
-            llm=llm,
-            tools=lc_tools,
-            system_prompt=DEFAULT_AGENT_PROMPT.system_text,
-        )
-        agent_service = LangChainAgentService(agent)
 
-        # 5. 组装容器,关闭栈所有权移交容器
+        identity = agent_identity_repo.get("agent-identity")
+        skills = skill_config_repo.get("skill-configs")
+
+        registry = build_agent_registry(
+            identity=identity or _DEFAULT_IDENTITY,
+            skills=skills or [],
+            general_skill=GENERAL_SKILL,
+            llm_factory=llm_factory,
+        )
+        recognizer = LlmIntentRecognizer(llm_factory.create_llm())
+        policy = RoutingPolicy(RoutingConfig())
+
+        # 5. 组装为对外唯一 AgentService 入口
+        agent_service = RoutingAgentService(recognizer, policy, registry)
+
+        # 6. 组装容器,关闭栈所有权移交容器
         container = Container(
             nacos_client=nacos_client,
             postgres_config_repo=postgres_config_repo,
@@ -117,9 +131,9 @@ async def build_container() -> Container:
             exit_stack=stack.pop_all(),
         )
         logger.info(
-            "组合根装配完成: model=%s, prompt=%s@%s",
+            "组合根装配完成: model=%s, routing=%d 技能（含兜底 %s）",
             llm_config.model,
-            DEFAULT_AGENT_PROMPT.name,
-            DEFAULT_AGENT_PROMPT.version,
+            len(skills or []) + 1,
+            GENERAL_SKILL.name,
         )
         return container

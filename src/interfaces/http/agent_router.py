@@ -37,4 +37,5 @@ async def chat(
         reply=resp.reply,
         thread_id=resp.thread_id,
         tool_calls_count=resp.tool_calls_count,
+        routed_skill=resp.routed_skill,
     )

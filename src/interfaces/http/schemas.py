@@ -38,3 +38,4 @@ class ChatResponse(BaseModel):
     reply: str
     thread_id: str | None = None
     tool_calls_count: int = 0
+    routed_skill: str | None = None
