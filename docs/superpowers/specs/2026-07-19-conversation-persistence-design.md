@@ -55,7 +55,8 @@
 | Checkpointer 驱动 | **官方 `langgraph-checkpoint-postgres`（psycopg3）** | 官方维护，序列化 / 迁移 / pending-writes 都由其负责，`setup()` 自动建表 | 自撸 asyncpg 版 `BaseCheckpointSaver`（重、易错、要自维护迁移）；继续用 `MemorySaver`（不满足持久化诉求） |
 | 双 PG 驱动 | **接受**：业务表走 asyncpg，checkpointer 走 psycopg | 两个连接池代价可控，换取官方 saver 的稳定性 | 统一驱动（需放弃官方 saver 或放弃 asyncpg，得不偿失） |
 | 写入路径 | **`RecordingAgentService` 装饰器** | 实现现有 `AgentService` 端口，包在真实 agent 外层，与 intent-routing 的 `RoutingAgentService` 同构，interfaces/SSE/DI 零改动 | 写在 `LangChainAgentService` 内部（耦合、破坏分层）；从 checkpoint 反查生成（脆弱） |
-| 消息明细来源 | **读 checkpointer 状态增量** | run / stream 统一取数，避免两条写路径的明细不对称；LangChain→记录映射内敛于基础设施 | 流式累积事件 + 非流式 enrich `AgentResponse`（两套逻辑、明细不一致） |
+| 消息明细来源 | **仅经 `AgentService` 端口的干净 DTO**：用户消息取自请求，本轮回复消息取自 `AgentResponse.messages`（流式则累积事件） | **与 LangGraph 消息结构解耦**——LangChain→DTO 的翻译只留在 Agent 适配器（端口边界内），recorder / repository / DTO 全不依赖 LangGraph | 读 checkpointer 状态增量（recorder 耦合 LangGraph 内部结构，**已否**） |
+| 单轮 token | **落在 `conversation_turn`**（prompt/completion/total） | 审计与成本统计的核心指标；由适配器汇总本轮各 AIMessage 的 `usage_metadata` 经 DTO 传出，不耦合 LangGraph | 只算全会话总量（丢每轮粒度）；不落（无法成本核算） |
 | 主键 | **UUID（`gen_random_uuid()`）** | 分布式友好、无需回读自增 | bigint identity（跨库/前端暴露不便） |
 | 归属组织 | **`thread_id`（无用户体系）** | 与需求一致；`conversation.thread_id` 同时是 LangGraph thread，天然关联两套数据 | 现在就上 user/tenant（YAGNI） |
 | 记录失败策略 | **best-effort，不阻断对话** | 落库是「尽力增强」的审计旁路，失败只告警，绝不让用户这轮对话失败 | 强一致双写（把审计故障放大成对话故障） |
@@ -71,14 +72,19 @@
 ```mermaid
 flowchart TD
     FE["前端 POST /agent/chat[/stream]"] --> REC["RecordingAgentService（装饰器）<br/>实现 AgentService 端口"]
-    REC -->|"委托 run/stream"| INNER["真实 AgentService<br/>(Routing/LangChain Agent)"]
+    REC -->|"委托 run/stream"| INNER["真实 AgentService（适配器）<br/>(Routing/LangChain Agent)"]
     INNER -->|"读写记忆"| SAVER["AsyncPostgresSaver<br/>(checkpointer)"]
+    INNER -.->|"返回干净 DTO<br/>AgentResponse.messages / 流式事件"| REC
     REC -->|"每轮落库(事务)"| REPO["ConversationRepository<br/>(端口→基础设施实现)"]
-    REC -->|"取本轮消息增量"| SNAP["ConversationSnapshotReader<br/>(读 saver 状态)"]
-    SNAP -.->|"读 messages 通道"| SAVER
     REPO --> PG[("PostgreSQL")]
     SAVER --> PG
+    subgraph BOUND["LangChain/LangGraph 仅存在于此边界内"]
+        INNER
+        SAVER
+    end
 ```
+
+> **解耦边界**：所有 LangChain / LangGraph 结构只出现在 `AgentService` 适配器与 checkpointer 内（图中 `BOUND`）。`RecordingAgentService`、`ConversationRepository` 及所有记录 DTO 只见 `AgentResponse` / `AgentStreamEvent` 这类干净 DTO，**不读 checkpointer、不识 LangChain 消息类型**。
 
 ### 4.2 两套数据、一个数据库
 
@@ -95,25 +101,22 @@ flowchart TD
 sequenceDiagram
     participant FE as 前端
     participant REC as RecordingAgentService
-    participant INNER as 真实 AgentService
-    participant SNAP as SnapshotReader
+    participant INNER as 真实 AgentService（适配器）
     participant REPO as ConversationRepository
 
     FE->>REC: run({messages, thread_id})
     REC->>REC: 解析/生成 thread_id
     REC->>INNER: run(req)（Agent 执行 + 写 checkpointer）
-    INNER-->>REC: AgentResponse{reply, routed_skill, tool_calls_count, usage}
-    REC->>REPO: get_or_create_conversation(thread_id)
-    REC->>REPO: 取已持久化消息数 persisted_count
-    REC->>SNAP: read_messages(thread_id) 全量
-    SNAP-->>REC: [Message...]（LangChain→记录）
-    REC->>REC: 取增量 tail = messages[persisted_count:]<br/>轮 seq = 上一轮+1
-    REC->>REPO: save_turn(turn + tail messages)（单事务）
+    Note right of INNER: 适配器把本轮 LangChain 消息<br/>映射为干净 DTO
+    INNER-->>REC: AgentResponse{reply, messages[], usage, routed_skill, tool_calls_count, model}
+    REC->>REC: 组装本轮：用户消息取自请求<br/>回复消息取自 resp.messages
+    REC->>REPO: get_or_create(thread_id)
+    REC->>REPO: save_turn(turn, messages)（单事务，seq 事务内取 max+1）
     Note over REC,REPO: 落库失败仅告警，不影响已返回给用户的 reply
     REC-->>FE: AgentResponse（回填 thread_id）
 ```
 
-流式 `stream` 同构：先委托 `inner.stream` 把事件透传给前端（体验不受落库影响），事件耗尽（收到 `done`）后，用同样的「snapshot 增量」方式落这一轮。
+流式 `stream` 同构：先委托 `inner.stream` 把事件透传给前端（体验不受落库影响），事件耗尽（收到 `done`）后，从**累积的事件**（`token` → 回复文本、`tool_start/tool_end` → 工具消息、`routing` → routed_skill、`done` → usage）组装本轮再落库。两条路径都只消费干净 DTO，不读 checkpointer。
 
 ---
 
@@ -187,9 +190,9 @@ erDiagram
 | `final_reply` | TEXT | NULL | Agent 最终回复；出错未回复则空 |
 | `routed_skill` | VARCHAR(128) | NULL | 意图路由命中技能（对接 intent-routing 的 `routed_skill`） |
 | `tool_call_count` | INT | NOT NULL, default `0` | 对应 `AgentResponse.tool_calls_count` |
-| `prompt_tokens` | INT | NULL | 取自 LLM `usage_metadata` |
-| `completion_tokens` | INT | NULL | 同上 |
-| `total_tokens` | INT | NULL | 同上 |
+| `prompt_tokens` | INT | NULL | **单轮 token 消耗**（输入）；适配器汇总本轮 AIMessage `usage_metadata` 经 DTO 传出 |
+| `completion_tokens` | INT | NULL | 单轮 token 消耗（输出） |
+| `total_tokens` | INT | NULL | 单轮合计（= 输入 + 输出） |
 | `model` | VARCHAR(128) | NULL | 实际模型 id（如 `deepseek-chat`） |
 | `status` | VARCHAR(32) | NOT NULL, default `'completed'` | `completed` / `error` |
 | `error_message` | TEXT | NULL | `status='error'` 时 |
@@ -253,32 +256,57 @@ app.state.checkpointer = saver
 
 ## 7. 写入路径：`RecordingAgentService`
 
-### 7.1 端口与模型（application 层，Pydantic）
+### 7.1 端口与模型（application 层，Pydantic，**零 LangGraph 依赖**）
 
-沿用现有 `application/ports/` 放置支持性端口（与 `agent_service` / `llm_factory` 同级），不塞进 billing `domain`。
+沿用现有 `application/ports/` 放置支持性端口（与 `agent_service` / `llm_factory` 同级），不塞进 billing `domain`。**去掉了原方案的 `ConversationSnapshotReader`**——不再有任何组件去读 checkpointer 状态。
 
 ```python
 # application/ports/conversation_repository.py
 class ConversationRepository(Protocol):
     async def get_or_create(self, thread_id: str) -> ConversationRecord: ...
-    async def persisted_message_count(self, conversation_id) -> int: ...
-    async def save_turn(self, turn: TurnRecord, messages: list[MessageRecord]) -> None: ...
-
-# application/ports/conversation_snapshot.py
-class ConversationSnapshotReader(Protocol):
-    async def read_messages(self, thread_id: str) -> list[MessageRecord]: ...
+    # save_turn 在同一事务里取 seq = max(seq)+1，避免额外往返与竞态
+    async def save_turn(self, turn: TurnRecord, messages: list[TurnMessage]) -> None: ...
 ```
 
-`ConversationRecord / TurnRecord / MessageRecord` 为 Pydantic v2 模型（`application/dto/conversation_dto.py`）。
+记录 DTO（`application/dto/conversation_dto.py`，全 Pydantic v2、无 LangChain 类型）：
+
+```python
+class TokenUsage(BaseModel):
+    prompt_tokens: int; completion_tokens: int; total_tokens: int
+    model_config = {"frozen": True}
+
+class TurnMessage(BaseModel):           # 轮内一条消息（干净 DTO）
+    role: Literal["user", "assistant", "tool"]
+    content: str | None = None
+    tool_name: str | None = None
+    tool_call_id: str | None = None
+    tool_args: dict | None = None
+    metadata: dict = Field(default_factory=dict)
+
+class ConversationRecord(BaseModel): id: UUID; thread_id: str
+class TurnRecord(BaseModel):            # 聚合指标；seq 由 repo 事务内产出
+    user_input: str; final_reply: str | None = None
+    routed_skill: str | None = None; tool_call_count: int = 0
+    usage: TokenUsage | None = None; model: str | None = None
+    status: Literal["completed", "error"] = "completed"
+    error_message: str | None = None; latency_ms: int | None = None
+```
+
+**对现有 Agent DTO 的增补**（`application/dto/agent_dto.py`，向后兼容、纯追加）：
+
+| DTO | 新增字段 | 用途 |
+|---|---|---|
+| `AgentResponse` | `messages: list[TurnMessage] = []`、`usage: TokenUsage \| None`、`model: str \| None` | 非流式：适配器把**本轮**回复消息与 token 以干净 DTO 交出（`routed_skill` 已由 intent-routing 设计追加） |
+| `AgentStreamEvent` | `usage: TokenUsage \| None = None` | 流式：`usage` 挂在 `done` 事件上下发，供装饰器累积 |
 
 ### 7.2 装饰器职责
 
-> 以下为**结构示意**，实现时以实际类型与项目风格为准（`AgentRequest/Response` 用 `model_copy(update=...)` 派生）。
+> 以下为**结构示意**，实现时以实际类型与项目风格为准（`AgentRequest/Response` 用 `model_copy(update=...)` 派生）。装饰器**只见干净 DTO**，构造参数里没有 snapshot / checkpointer。
 
 ```python
 # application/services/recording_agent_service.py（实现 AgentService 端口）
 class RecordingAgentService:
-    def __init__(self, inner: AgentService, repo, snapshot): ...
+    def __init__(self, inner: AgentService, repo: ConversationRepository): ...
 
     async def run(self, req: AgentRequest) -> AgentResponse:
         thread_id = req.thread_id or _new_thread_id()
@@ -290,29 +318,35 @@ class RecordingAgentService:
     async def stream(self, req: AgentRequest):
         thread_id = req.thread_id or _new_thread_id()
         req = req.model_copy(update={"thread_id": thread_id})
-        agg = _Aggregator()                          # 累积 routed_skill / tool 次数 / 文本
+        agg = _Aggregator()             # 从事件累积：文本 / 工具消息 / routed_skill / usage
         async for ev in self._inner.stream(req):
             agg.observe(ev)
-            yield ev
+            yield ev                     # 先透传，体验不受落库影响
         await self._record_from_agg(thread_id, req, agg)  # done 后落库，失败仅告警
 ```
 
 ### 7.3 落一轮（`_record`）
 
 1. `conv = repo.get_or_create(thread_id)`。
-2. `persisted = repo.persisted_message_count(conv.id)`；`turn.seq = 上一轮 + 1`。
-3. `all_msgs = snapshot.read_messages(thread_id)`；`tail = all_msgs[persisted:]` = 本轮消息（含用户消息、assistant、tool）。
-4. 组装 `TurnRecord`（`user_input` 取本轮首条 user 文本；`final_reply` / `routed_skill` / `tool_call_count` / usage / `model` / `latency_ms` 取自 `AgentResponse` 或聚合器）。
-5. `repo.save_turn(turn, tail)` —— **单事务**写 turn + messages，并 bump `conversation.updated_at`。
+2. 组装本轮 `messages`：**用户消息取自 `req.messages`**（装饰器本就持有，无需向 Agent 要）；**回复消息取自 `resp.messages`**（非流式）或事件累积（流式）。
+3. 组装 `TurnRecord`：`user_input` = 本轮用户输入文本；`final_reply` / `usage` / `model` / `routed_skill` / `tool_call_count` / `latency_ms` 取自 `AgentResponse` 或聚合器。
+4. `repo.save_turn(turn, messages)` —— **单事务**写 turn + messages（seq 事务内取 `max+1`），并 bump `conversation.updated_at`。
+
+全程不出现 LangChain / LangGraph 类型，也不读 checkpointer。
 
 ### 7.4 thread_id 解析
 
 - 请求带 `thread_id`：get-or-create 复用。
 - 不带：服务端生成 UUID。**非流式**在 `AgentResponse.thread_id` 回传（字段已存在）；**流式** MVP 约定由客户端为新会话预生成 thread_id 传入（标准聊天模式），服务端回显机制记为后续项（§13）。
 
-### 7.5 usage / model 来源
+### 7.5 翻译边界：适配器是唯一认识 LangChain 的地方
 
-优先取 `AgentResponse`（非流式）与聚合器（流式）；缺失时从 snapshot 的 AIMessage `usage_metadata` / `response_metadata` 兜底提取。stream 事件当前不含 `tool_call_id` 与逐 token usage，故流式明细可能略粗于非流式——可接受，记为已知差异。
+解耦的关键落点——**所有 LangChain / LangGraph → DTO 的翻译只发生在 Agent 适配器内**（`AgentService` 端口的实现体）：
+
+- **非流式 `run`**：适配器取**本轮新产生**的消息（用 LangGraph `stream_mode="updates"` 的节点增量，天然只含本次调用的新消息，**无需读 checkpointer、无需 diff 全量 state**），映射为 `list[TurnMessage]`；汇总各 AIMessage 的 `usage_metadata` 为 `TokenUsage`；连同 `model` 填入 `AgentResponse`。
+- **流式 `stream`**：`_map_event` 在最终 `on_chat_model_end` / 链结束时提取 usage，挂到 `done` 事件；`token`/`tool_start`/`tool_end`/`routing` 事件已够装饰器重建消息与聚合。
+
+> 已知差异：流式事件当前不含 `tool_call_id` 与逐 token usage，故**流式明细可能略粗于非流式**——可接受，记为后续项。无论哪条路径，装饰器与仓储都只消费干净 DTO。
 
 ---
 
@@ -320,13 +354,14 @@ class RecordingAgentService:
 
 | 组件 | 位置 | 层 | 新增/改造 |
 |---|---|---|---|
-| `ConversationRepository` / `ConversationSnapshotReader` 端口 | `application/ports/conversation_repository.py`、`conversation_snapshot.py` | application | 新增 |
-| `ConversationRecord / TurnRecord / MessageRecord`（Pydantic） | `application/dto/conversation_dto.py` | application | 新增 |
+| `ConversationRepository` 端口 | `application/ports/conversation_repository.py` | application | 新增 |
+| `ConversationRecord / TurnRecord / TurnMessage / TokenUsage`（Pydantic） | `application/dto/conversation_dto.py` | application | 新增 |
+| `AgentResponse` / `AgentStreamEvent` 字段增补（`messages` / `usage` / `model`） | `application/dto/agent_dto.py` | application | 改造（纯追加、向后兼容） |
 | `RecordingAgentService` 装饰器 | `application/services/recording_agent_service.py` | application | 新增 |
+| **适配器**：本轮消息 + usage → 干净 DTO 的映射（唯一认识 LangChain 处） | `LangChainAgentService`（现 `interfaces/ai/react_agent.py`） | infrastructure（职责） | 改造 |
 | SQLAlchemy `DeclarativeBase` + 3 表 ORM | `infrastructure/persistence/orm.py` | infrastructure | 新增 |
 | async engine + `async_sessionmaker` 工厂 | `infrastructure/persistence/engine.py` | infrastructure | 新增（补重构缺口） |
 | `SqlAlchemyConversationRepository` | `infrastructure/persistence/conversation_repository.py` | infrastructure | 新增 |
-| `LangGraphSnapshotReader`（读 saver 状态、LangChain→记录映射） | `infrastructure/persistence/langgraph_snapshot.py` | infrastructure | 新增 |
 | `AsyncPostgresSaver` 装配 | `bootstrap/container.py` + `main.py` lifespan | bootstrap | 改造 |
 | Agent 注入 checkpointer | `bootstrap/container.py:98` | bootstrap | 改造 |
 | DI 装配 `RecordingAgentService` 包住真实 agent | `bootstrap/container.py` | bootstrap | 改造 |
@@ -356,23 +391,23 @@ class RecordingAgentService:
 | 本轮 Agent 出错（无 final_reply） | 落 `turn.status='error'` + `error_message`；messages 尽力落已产生部分 |
 | 空 `messages` 请求 | 由 schema / 应用层校验，建议 `422`（复用现状） |
 | `thread_id` 冲突并发建会话 | `get_or_create` 用 `INSERT … ON CONFLICT (thread_id) DO NOTHING` + 回查，保证唯一 |
-| snapshot 读不到（checkpointer 尚无该 thread） | tail 为空则只落 turn 聚合，不落 messages，并告警 |
+| 适配器未产出本轮消息（异常/空） | 只落 `turn` 聚合，不落 messages，并告警 |
 
 ---
 
 ## 11. 测试策略
 
 **单元**（无真实 LLM）
-- `RoutingPolicy` 无关；核心测 `RecordingAgentService`（stub `inner` + fake repo + fake snapshot）：正常落一轮、seq 递增、`thread_id` 生成回填、**落库抛错不冒泡**、error 轮 status 正确。
-- `LangGraphSnapshotReader` 映射：LangChain `HumanMessage/AIMessage(tool_calls)/ToolMessage` → `MessageRecord`（role/tool_name/tool_call_id/args）。
-- `SqlAlchemyConversationRepository`：`get_or_create` 幂等（并发 ON CONFLICT）、`persisted_message_count`、`save_turn` 事务性（turn+messages 同成同败）。
+- 核心测 `RecordingAgentService`（stub `inner` + fake repo，**无 snapshot**）：正常落一轮、`thread_id` 生成回填、用户消息取自请求 + 回复消息取自 `resp.messages`、流式从事件累积、**落库抛错不冒泡**、error 轮 status 正确、单轮 token 正确写入。
+- **适配器映射**（`LangChainAgentService`）：本轮 LangChain `HumanMessage/AIMessage(tool_calls)/ToolMessage` → `TurnMessage`（role/tool_name/tool_call_id/args）；多条 AIMessage 的 `usage_metadata` 汇总为 `TokenUsage`。此为 LangChain 唯一触点，测试隔离在此。
+- `SqlAlchemyConversationRepository`：`get_or_create` 幂等（并发 ON CONFLICT）、`save_turn` 事务性（turn+messages 同成同败、seq 事务内 `max+1`）。
 
 **集成**（真实 PostgreSQL，可用 testcontainers 或本地库）
 - `alembic upgrade head` 建表，存取一轮并按 seq 重放校验。
 - `saver.setup()` 幂等；同一 `thread_id` 跨「两次 run」记忆延续，业务表落两轮。
 
-**DDD 校验**
-- `application` 不 import SQLAlchemy / LangChain；`domain` 不受本设计影响。
+**DDD / 解耦校验**
+- `application`（含 `RecordingAgentService`、`ConversationRepository`、记录 DTO）**不 import 任何 `langchain*` / `langgraph*` / SQLAlchemy**；`domain` 不受本设计影响。可加一条 import 断言测试守住这条边界。
 
 ---
 
@@ -389,6 +424,7 @@ class RecordingAgentService:
 
 - **DB engine 重构收口**：`container.py` 对已删 `infrastructure.config.database` 的 import 需随本设计一并改到新的 `infrastructure/persistence/engine.py`。
 - **流式 thread_id 回显**：服务端为新会话生成的 thread_id 如何在 SSE 内回传前端（首帧事件或响应头），本期约定客户端供，后续增强。
+- **流式明细精度**：流式事件当前不含 `tool_call_id` 与逐 token usage，流式落库的消息明细略粗于非流式；后续可在 `_map_event` 补充。
 - **用户体系**：`user_id / tenant_id` 及其外键/索引，待用户体系接入后加列。
 - **checkpointer 独立 schema**：可将 checkpointer 4 表隔离到独立 schema（如 `langgraph`），与业务 schema 分离；本期同 `public`。
 - **对话检索 / 清理策略**：历史检索、全文/向量搜索、TTL 归档与清理，另立。
