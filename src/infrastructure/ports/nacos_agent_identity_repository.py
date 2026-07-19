@@ -10,7 +10,7 @@ from typing import Callable
 
 import yaml
 
-from domain.ports.prompt_repository import AgentIdentityRepository
+from domain.ports.agent_identity_repository import AgentIdentityRepository
 from domain.value_objects.agent_identity import AgentIdentity
 from infrastructure.client.nacos import NacosClient
 from infrastructure.ports.nacos_config_repository import NacosConfigRepository

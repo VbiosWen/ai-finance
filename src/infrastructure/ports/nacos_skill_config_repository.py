@@ -10,7 +10,7 @@ from typing import Callable
 
 import yaml
 
-from domain.ports.prompt_repository import SkillConfigRepository
+from domain.ports.skill_config_repository import SkillConfigRepository
 from domain.value_objects.skill_config import SkillConfig
 from infrastructure.client.nacos import NacosClient
 from infrastructure.ports.nacos_config_repository import NacosConfigRepository
