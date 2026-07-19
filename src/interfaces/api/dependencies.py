@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from fastapi import HTTPException, Request
 
+from application.conversation.send_message import SendMessageUseCase
 from application.ports.agent_service import AgentService
 from domain.ports.agent_identity_repository import AgentIdentityRepository
 from domain.ports.skill_config_repository import SkillConfigRepository
@@ -31,3 +32,11 @@ def get_agent_service(request: Request) -> AgentService:
     if agent_service is None:
         raise HTTPException(status_code=503, detail="AgentService 尚未就绪")
     return agent_service
+
+
+def get_send_message_use_case(request: Request) -> SendMessageUseCase:
+    """注入 lifespan 装配的对话用例单例。"""
+    use_case = getattr(request.app.state, "send_message_use_case", None)
+    if use_case is None:
+        raise HTTPException(status_code=503, detail="对话用例尚未就绪")
+    return use_case

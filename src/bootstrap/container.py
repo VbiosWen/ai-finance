@@ -137,3 +137,29 @@ async def build_container() -> Container:
             GENERAL_SKILL.name,
         )
         return container
+
+
+# ---------------------------------------------------------------------------
+# 对话用例装配工厂
+# ---------------------------------------------------------------------------
+
+from sqlalchemy.ext.asyncio import AsyncEngine, async_sessionmaker
+
+from application.conversation.send_message import SendMessageUseCase
+from domain.conversation.context_window import ContextWindowPolicy
+from infrastructure.conversation.event_publisher import InMemoryEventPublisher
+from infrastructure.conversation.repository import SqlAlchemyConversationRepository
+
+
+def build_conversation_use_case(
+    engine: AsyncEngine,
+    agent_service: AgentService,
+    *,
+    window_size: int = 20,
+) -> SendMessageUseCase:
+    """装配对话用例：SQLAlchemy 仓储 + 进程内发布器 + 窗口策略。"""
+    session_factory = async_sessionmaker(engine, expire_on_commit=False)
+    repo = SqlAlchemyConversationRepository(session_factory)
+    publisher = InMemoryEventPublisher()
+    window = ContextWindowPolicy(size=window_size)
+    return SendMessageUseCase(repo, agent_service, publisher, window)

@@ -19,7 +19,7 @@ logger = logging.getLogger("ai-finance")
 def _build_one(identity: AgentIdentity, skill: SkillConfig, llm) -> AgentService:
     """把单个技能装配为一个可运行的 AgentService。"""
     prompt = AgentPromptConfig(agent_identity=identity, skill=[skill]).render()
-    agent = create_react_agent(llm=llm, tools=[], system_prompt=prompt)
+    agent = create_react_agent(llm=llm, tools=[], system_prompt=prompt, enable_memory=False)
     return LangChainAgentService(agent)
 
 
