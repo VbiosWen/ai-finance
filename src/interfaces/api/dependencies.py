@@ -5,7 +5,7 @@
 """
 from __future__ import annotations
 
-from fastapi import Request
+from fastapi import HTTPException, Request
 
 from application.ports.agent_service import AgentService
 from domain.ports.agent_identity_repository import AgentIdentityRepository
@@ -23,5 +23,11 @@ def get_skill_config_repo(request: Request) -> SkillConfigRepository:
 
 
 def get_agent_service(request: Request) -> AgentService:
-    """注入应用级单例 AgentService(SSE / chat 端点使用)。"""
-    return request.app.state.container.agent_service
+    """注入 lifespan 预热的 AgentService 单例。
+
+    单例常驻使 MemorySaver 跨请求存活，thread_id 多轮记忆才能生效。
+    """
+    agent_service = getattr(request.app.state.container, "agent_service", None)
+    if agent_service is None:
+        raise HTTPException(status_code=503, detail="AgentService 尚未就绪")
+    return agent_service
