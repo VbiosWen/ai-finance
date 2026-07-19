@@ -19,7 +19,7 @@ from domain.shared.prompts import DEFAULT_AGENT_PROMPT, Prompt
 from infrastructure.ai.agent_factory import create_react_agent
 from infrastructure.ai.llm_client_factory import LLMClientFactory
 from infrastructure.ai.tool_adapter import adapt_ai_tools
-from infrastructure.config.database import create_db_engine
+from infrastructure.client.database import create_db_engine
 from infrastructure.config.llm_config import LLMConfig
 from interfaces.ai.react_agent import LangChainAgentService
 

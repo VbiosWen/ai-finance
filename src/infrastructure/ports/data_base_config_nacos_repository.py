@@ -16,7 +16,7 @@ from infrastructure.ports.nacos_config_repository import NacosConfigRepository
 logger = getLogger(__name__)
 
 
-class PostgresConfigRepository(NacosConfigRepository):
+class NacosPostgresConfigRepository(NacosConfigRepository):
     """PostgreSQL 数据库配置的 Nacos 仓储实现。
 
     启动时从 Nacos 拉取数据库连接配置，并持续监听远程变更以热更新。
@@ -94,4 +94,7 @@ class PostgresConfigRepository(NacosConfigRepository):
             logger.info("数据库配置已热更新（Nacos）。")
         except Exception:
             logger.exception("数据库配置热更新失败，将继续使用旧配置。")
+
+    def get_config(self) -> PostgresConfig | None:
+        return self._database_config
 

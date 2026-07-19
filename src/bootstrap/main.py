@@ -22,11 +22,13 @@ from bootstrap.dependencies import (
     get_nacos_client,
     get_skill_config_repo,
 )
+from infrastructure.client.database import DatabaseManager
 from infrastructure.client.nacos import NacosClient, NacosConfig
 from infrastructure.ports import (
     NacosAgentIdentityRepository,
     NacosSkillConfigRepository,
 )
+from infrastructure.ports.data_base_config_nacos_repository import NacosPostgresConfigRepository
 from infrastructure.ports.nacos_llm_config_repository import NacosLLMConfigRepository
 
 logger = logging.getLogger("ai-finance")
@@ -52,7 +54,17 @@ async def lifespan(app: FastAPI):
     await client.start()
     app.state.nacos_client = client
 
-    # 预热：启动时加载配置仓库，避免首个请求等待
+    # ── 数据库配置 + 管理器 ──────────────────────────────────────
+    postgres_repo = NacosPostgresConfigRepository(client)
+    await postgres_repo.load()
+    app.state.postgres_config_repo = postgres_repo
+
+    db_manager = DatabaseManager(postgres_repo)
+    await db_manager.initialize()
+    app.state.db_manager = db_manager
+    logger.info("数据库管理器已就绪")
+
+    # ── 其他配置仓库预热 ─────────────────────────────────────────
     agent_repo = NacosAgentIdentityRepository(client)
     await agent_repo.load()
     app.state.agent_identity_repo = agent_repo
@@ -70,6 +82,8 @@ async def lifespan(app: FastAPI):
 
     yield
 
+    # ── 优雅关闭：先释放数据库连接池，再停 Nacos 客户端 ─────────
+    await db_manager.dispose()
     await client.stop()
 
 

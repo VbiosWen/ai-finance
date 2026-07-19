@@ -15,6 +15,9 @@ from infrastructure.ports import (
     NacosAgentIdentityRepository,
     NacosSkillConfigRepository,
 )
+from infrastructure.client.database import DatabaseManager
+from infrastructure.ports.data_base_config_nacos_repository import NacosPostgresConfigRepository
+from infrastructure.ports.nacos_config_repository import NacosConfigRepository
 from infrastructure.ports.nacos_llm_config_repository import NacosLLMConfigRepository
 
 logger = logging.getLogger("ai-finance")
@@ -29,6 +32,14 @@ def get_nacos_client(request: Request) -> NacosClient:
     """注入 NacosClient 单例。"""
     return request.app.state.nacos_client
 
+def get_postgres_config_repo(request: Request) -> NacosPostgresConfigRepository:
+    """注入已预热的 PostgreSQL 配置仓库。"""
+    return request.app.state.postgres_config_repo
+
+
+def get_db_manager(request: Request) -> DatabaseManager:
+    """注入已初始化的数据库管理器。"""
+    return request.app.state.db_manager
 
 def get_agent_identity_repo(request: Request) -> NacosAgentIdentityRepository:
     """注入已预热的 AgentIdentity 仓库。"""

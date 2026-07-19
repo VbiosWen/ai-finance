@@ -56,6 +56,19 @@ class PostgresConfig(BaseModel):
         description="是否打印 SQL 日志（调试用，生产环境务必关闭）",
     )
 
+    pool_timeout: int = Field(
+        default=30,
+        description="从连接池获取连接的超时时间（秒）",
+    )
+    pool_recycle: int = Field(
+        default=3600,
+        description="连接最大存活时间（秒），超时后自动回收",
+    )
+    statement_timeout_ms: int = Field(
+        default=30000,
+        description="SQL 语句执行超时时间（毫秒）",
+    )
+
     model_config = {"frozen": True}
 
     # ── 派生属性 ──────────────────────────────────────────────────────────
