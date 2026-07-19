@@ -124,6 +124,12 @@ class DatabaseManager:
 
     # ── 会话获取 ────────────────────────────────────────────────────────
 
+    @property
+    def async_engine(self) -> AsyncEngine:
+        """获取异步 SQLAlchemy 引擎（用于建表等直接引擎操作）。"""
+        self._ensure_initialized()
+        return self._async_engine
+
     def async_session(self) -> AsyncSession:
         """获取一个新的异步会话。
 

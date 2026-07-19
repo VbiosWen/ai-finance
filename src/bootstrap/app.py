@@ -11,7 +11,12 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from bootstrap.container import Container, build_container
+from bootstrap.container import (
+    Container,
+    build_container,
+    build_conversation_use_case,
+)
+from infrastructure.conversation.models import create_conversation_tables
 from interfaces.api.routes import all_routers
 from interfaces.conversation.router import router as conversation_router
 from interfaces.http.agent_router import router as agent_router
@@ -41,6 +46,16 @@ def create_app(container: Container | None = None) -> FastAPI:
         owns_container = container is None
         app.state.container = await build_container() if owns_container else container
         logger.info("依赖装配完成,服务就绪")
+
+        # ── 对话子域装配（仅生产路径；测试用 dependency_overrides 注入） ─
+        if owns_container:
+            engine = app.state.container.db_manager.async_engine
+            await create_conversation_tables(engine)
+            app.state.send_message_use_case = build_conversation_use_case(
+                engine, app.state.container.agent_service
+            )
+            logger.info("对话用例已装配（Conversation 子域）")
+
         try:
             yield
         finally:
