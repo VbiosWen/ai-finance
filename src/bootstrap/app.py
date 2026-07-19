@@ -13,6 +13,7 @@ from fastapi import FastAPI
 
 from bootstrap.container import Container, build_container
 from interfaces.api.routes import all_routers
+from interfaces.http.agent_router import router as agent_router
 
 logger = logging.getLogger("ai-finance")
 
@@ -52,4 +53,5 @@ def create_app(container: Container | None = None) -> FastAPI:
     )
     for router in all_routers:
         app.include_router(router)
+    app.include_router(agent_router)
     return app
