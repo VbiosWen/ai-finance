@@ -13,11 +13,12 @@ import yaml
 from domain.ports.prompt_repository import AgentIdentityRepository
 from domain.value_objects.agent_identity import AgentIdentity
 from infrastructure.client.nacos import NacosClient
+from infrastructure.ports.nacos_config_repository import NacosConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
 
-class NacosAgentIdentityRepository(AgentIdentityRepository):
+class NacosAgentIdentityRepository(AgentIdentityRepository,NacosConfigRepository):
     """从 Nacos 读取 AgentIdentity，支持热更新。
 
     用法::

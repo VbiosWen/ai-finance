@@ -4,11 +4,12 @@ import logging
 
 from infrastructure.client.nacos import NacosClient
 from infrastructure.config import LLMConfig
+from infrastructure.ports.nacos_config_repository import NacosConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
 
-class NacosLLMConfigRepository:
+class NacosLLMConfigRepository(NacosConfigRepository):
     """LLM 配置的 Nacos 适配器。
 
     从 Nacos 读取 JSON 格式的 LLMConfig，缓存 + 热更新。

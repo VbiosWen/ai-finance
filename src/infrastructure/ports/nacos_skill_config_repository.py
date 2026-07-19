@@ -13,11 +13,12 @@ import yaml
 from domain.ports.prompt_repository import SkillConfigRepository
 from domain.value_objects.skill_config import SkillConfig
 from infrastructure.client.nacos import NacosClient
+from infrastructure.ports.nacos_config_repository import NacosConfigRepository
 
 logger = logging.getLogger("ai-finance")
 
 
-class NacosSkillConfigRepository(SkillConfigRepository):
+class NacosSkillConfigRepository(SkillConfigRepository,NacosConfigRepository):
     """从 Nacos 读取 SkillConfig 列表，支持热更新。
 
     用法::

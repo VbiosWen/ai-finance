@@ -27,9 +27,11 @@ FROM python:3.11-slim-bookworm AS runtime
 
 WORKDIR /app
 
-# 安装运行时系统依赖
+# 安装运行时系统依赖（含 psql 客户端便于调试）
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ca-certificates && \
+    apt-get install -y --no-install-recommends \
+        ca-certificates \
+        postgresql-client && \
     rm -rf /var/lib/apt/lists/*
 
 # 从 builder 复制虚拟环境
