@@ -70,7 +70,7 @@ class ConversationAggregateTest(unittest.TestCase):
     def test_reconstitute_no_events_no_pending(self) -> None:
         msgs = [Message(role=MessageRole.USER, content="旧消息", created_at=datetime.now(timezone.utc))]
         convo = Conversation.reconstitute(
-            id=ConversationId(value="c1"), agent_id=_agent(),
+            id=ConversationId(value="0" * 30 + "c1"), agent_id=_agent(),
             status=ConversationStatus.ACTIVE,
             created_at=datetime.now(timezone.utc), updated_at=datetime.now(timezone.utc),
             messages=msgs,

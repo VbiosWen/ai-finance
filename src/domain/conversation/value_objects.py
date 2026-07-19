@@ -6,12 +6,19 @@ from enum import Enum
 
 from pydantic import BaseModel, Field
 
+from domain.shared.id_generator import uuid7
+
 
 class ConversationId(BaseModel):
-    """对话标识（uuid4 hex）。"""
+    """对话标识（uuid7 hex，32 位小写十六进制，趋势递增）。"""
 
-    value: str
+    value: str = Field(pattern=r"^[0-9a-f]{32}$")
     model_config = {"frozen": True}
+
+    @classmethod
+    def new(cls) -> "ConversationId":
+        """生成新标识——单调 uuid7，ID 字典序即创建时间序。"""
+        return cls(value=uuid7().hex)
 
 
 class MessageRole(str, Enum):

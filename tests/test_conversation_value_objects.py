@@ -16,8 +16,19 @@ from domain.conversation.value_objects import (
 
 
 class ValueObjectsTest(unittest.TestCase):
-    def test_conversation_id(self) -> None:
-        self.assertEqual(ConversationId(value="abc").value, "abc")
+    def test_conversation_id_new_is_valid_and_increasing(self) -> None:
+        a, b = ConversationId.new(), ConversationId.new()
+        self.assertRegex(a.value, r"^[0-9a-f]{32}$")
+        self.assertLess(a.value, b.value)  # hex 字典序 = 生成序
+
+    def test_conversation_id_rejects_invalid(self) -> None:
+        for bad in ("abc", "A" * 32, "g" * 32, "0" * 31, "0" * 33):
+            with self.assertRaises(ValidationError):
+                ConversationId(value=bad)
+
+    def test_conversation_id_accepts_legacy_hex(self) -> None:
+        # 存量 uuid4 hex 同为 32 位小写十六进制，必须继续可用
+        self.assertEqual(ConversationId(value="0" * 32).value, "0" * 32)
 
     def test_roles(self) -> None:
         self.assertEqual(MessageRole.USER.value, "user")

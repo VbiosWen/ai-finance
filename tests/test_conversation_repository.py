@@ -79,7 +79,7 @@ class ConversationRepositoryTest(unittest.TestCase):
     def test_get_missing_returns_none(self) -> None:
         async def run() -> None:
             repo, _ = await _make_repo()
-            self.assertIsNone(await repo.get(ConversationId(value="不存在")))
+            self.assertIsNone(await repo.get(ConversationId(value="f" * 32)))  # 合法但不存在
 
         asyncio.run(run())
 
