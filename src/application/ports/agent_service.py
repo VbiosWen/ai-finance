@@ -5,11 +5,12 @@
 from __future__ import annotations
 
 from collections.abc import AsyncIterator
-from typing import Any, Protocol
+from typing import Any, Protocol, runtime_checkable
 
 from application.dto.agent_dto import AgentRequest, AgentResponse, AgentStreamEvent
 
 
+@runtime_checkable
 class AgentService(Protocol):
     """Agent 服务抽象端口。
 
