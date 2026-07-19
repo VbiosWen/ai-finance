@@ -12,11 +12,14 @@ import logging
 from dataclasses import dataclass, field
 from typing import Any
 
+from sqlalchemy.ext.asyncio import AsyncEngine
+
 from domain.shared.ai_tools import AITool
 from domain.shared.prompts import DEFAULT_AGENT_PROMPT, Prompt
 from infrastructure.ai.agent_factory import create_react_agent
 from infrastructure.ai.llm_client_factory import LLMClientFactory
 from infrastructure.ai.tool_adapter import adapt_ai_tools
+from infrastructure.config.database import create_db_engine
 from infrastructure.config.llm_config import LLMConfig
 from interfaces.ai.react_agent import LangChainAgentService
 
@@ -32,6 +35,9 @@ class Container:
     llm_factory: LLMClientFactory | None = None
     tools: list[AITool] = field(default_factory=list)
 
+    # 基础设施
+    db_engine: AsyncEngine | None = None
+
     # 随业务接入扩展，例如：
     #   invoice_repository: "InvoiceRepository"
     #   message_bus: "MessageBus"
@@ -42,7 +48,9 @@ async def build_container(
     config: LLMConfig | None = None,
     system_prompt: Prompt | None = None,
     tools: list[AITool] | None = None,
+    db_url: str | None = None,
     skip_ai: bool = False,
+    skip_db: bool = False,
 ) -> Container:
     """构建并返回组合根容器。
 
@@ -51,7 +59,9 @@ async def build_container(
                 ``skip_ai=True`` 时可为 None。
         system_prompt: 系统提示词值对象，默认使用 DEFAULT_AGENT_PROMPT。
         tools: 领域工具实例列表。
+        db_url: PostgreSQL 连接字符串，为 None 时从环境变量 DATABASE_URL 读取。
         skip_ai: 跳过 AI 组件装配，返回最小容器（用于测试）。
+        skip_db: 跳过数据库引擎创建（用于测试）。
 
     Returns:
         装配完成的 Container 实例。
@@ -64,6 +74,10 @@ async def build_container(
         raise ValueError("非 skip_ai 模式下必须提供 config 参数")
 
     container = Container()
+
+    # 0. 数据库引擎
+    if not skip_db:
+        container.db_engine = create_db_engine(url=db_url)
 
     # 1. LLM
     llm_factory = LLMClientFactory(config)

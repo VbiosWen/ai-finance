@@ -11,6 +11,7 @@
 from __future__ import annotations
 
 import logging
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import Depends, FastAPI
@@ -44,8 +45,8 @@ async def lifespan(app: FastAPI):
     )
 
     cfg = NacosConfig(
-        address="127.0.0.1:8848",
-        namespace="ai-finance",
+        address=os.getenv("NACOS_ADDRESS", "127.0.0.1:8848"),
+        namespace=os.getenv("NACOS_NAMESPACE", "ai-finance"),
     )
     client = NacosClient(cfg)
     await client.start()

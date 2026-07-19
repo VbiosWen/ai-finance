@@ -1,0 +1,40 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# ── 敏感配置 ──
+.env
+config/config.json
+
+# ── IDE / 编辑器 ──
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── Git ──
+.git/
+.gitignore
+.gitattributes
+
+# ── 文档 / 杂项 ──
+docs/
+*.md
+!README.md
+
+# ── 测试 ──
+tests/
+
+# ── CI / 部署（自身不需要打包进镜像） ──
+docker/
+docker-compose*.yml
+Dockerfile*
+.dockerignore
+
+# ── macOS ──
+.DS_Store

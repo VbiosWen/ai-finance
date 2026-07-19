@@ -1,0 +1,90 @@
+# ============================================================================
+# AI Finance 账票服务 —— Docker Compose 部署
+# ============================================================================
+# 启动全部服务:
+#   docker compose up -d
+#
+# 仅构建并启动 app（Nacos 已运行时）:
+#   docker compose up -d app
+#
+# 查看日志:
+#   docker compose logs -f app
+# ============================================================================
+
+version: "3.9"
+
+services:
+  # ── Nacos 配置中心（standalone 模式，嵌入式 Derby） ─────────────────────
+  nacos:
+    image: nacos/nacos-server:v2.5.1
+    container_name: ai-finance-nacos
+    restart: unless-stopped
+    environment:
+      MODE: standalone
+      # 开启鉴权（生产环境必须修改默认密钥）
+      NACOS_AUTH_ENABLE: "true"
+      NACOS_AUTH_IDENTITY_KEY: ai-finance-server
+      NACOS_AUTH_IDENTITY_VALUE: ai-finance-secret
+      NACOS_AUTH_TOKEN_SECRET_KEY: SecretKey012345678901234567890123456789012345678901234567890123456789
+    ports:
+      - "8848:8848"
+      - "9848:9848"   # gRPC 端口（SDK 内部通信）
+    volumes:
+      - nacos-data:/home/nacos/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -o /dev/null -w '%{http_code}' http://localhost:8848/nacos/v1/console/health/readiness | grep 200"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  # ── PostgreSQL 数据库 ───────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: ai-finance-pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ai_finance
+      POSTGRES_PASSWORD: ai_finance_dev
+      POSTGRES_DB: ai_finance
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+      # 初始化脚本（可选）
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_finance -d ai_finance"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ── AI Finance 账票服务 ──────────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-finance-app
+    restart: unless-stopped
+    environment:
+      # Nacos
+      NACOS_ADDRESS: nacos:8848
+      NACOS_NAMESPACE: ai-finance
+      # PostgreSQL
+      DATABASE_URL: postgresql+asyncpg://ai_finance:ai_finance_dev@postgres:5432/ai_finance
+    ports:
+      - "8000:8000"
+    depends_on:
+      nacos:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    profiles:
+      - ""            # 默认启动
+
+volumes:
+  nacos-data:
+    driver: local
+  pg-data:
+    driver: local
