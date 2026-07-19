@@ -53,8 +53,10 @@ uv add <package>
 
 ### 组合根 bootstrap
 
-- `bootstrap/container.py` 的 `build_container()`:集中装配依赖(数据库、事件总线、用 infrastructure 实现装配 domain 的仓储接口、注册处理器)。
-- `bootstrap/main.py` 的 `main()`:装配组合根并启动服务。选定 Web 框架后,在此处 `create_app(container)` 并运行。
+- `bootstrap/container.py` 的 `build_container()`(async):**单一装配出口**,一次性完成 Nacos → 配置仓库预热 → DatabaseManager → Agent 单例全链装配;资源关闭由 `AsyncExitStack` 逆序执行(`Container.shutdown()`)。`Container` 是 frozen Pydantic 模型,`agent_service` 字段标 application 端口类型。
+- `bootstrap/app.py` 的 `create_app(container=None)`:FastAPI 应用工厂;生产路径在 lifespan 内 `await build_container()`(异步装配须与 uvicorn 同一事件循环),测试路径传入预制 Container(由调用方负责 shutdown)。
+- `bootstrap/main.py` 的 `main()`:仅以 uvicorn factory 模式运行 `bootstrap.app:create_app`。
+- FastAPI 的 DI 胶水(`Depends` provider)位于 `interfaces/api/dependencies.py`:签名只标 domain/application 端口类型,函数体从 `app.state.container` 取字段,interfaces 不 import bootstrap/infrastructure。
 - 根目录 `main.py` 是**免配置启动器**,仅把 `src` 加入路径后委托给 `bootstrap.main:main`;正式入口是 `pyproject.toml` 里的 `ai-finance` 脚本。
 
 ### 业务模块(收票 / 稽核)

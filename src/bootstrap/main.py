@@ -1,22 +1,23 @@
-"""FastAPI 服务启动入口。
+"""服务启动入口:以 uvicorn factory 模式运行应用工厂。
 
-职责：
-- 通过 create_app 工厂创建 FastAPI app（含 lifespan + 路由）
-- 启动 uvicorn
-
-create_app 统一管理: lifespan → Container 装配 → 路由注册 → 优雅关闭。
+应用装配见 bootstrap/app.py(create_app + lifespan),
+依赖装配见 bootstrap/container.py(build_container)。
+开发热重载:uv run uvicorn bootstrap.app:create_app --factory --reload
 """
 from __future__ import annotations
 
-from bootstrap.app import create_app
-
-app = create_app()
+import os
 
 
 def main() -> None:
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(
+        "bootstrap.app:create_app",
+        factory=True,
+        host=os.getenv("HOST", "0.0.0.0"),
+        port=int(os.getenv("PORT", "8000")),
+    )
 
 
 if __name__ == "__main__":
