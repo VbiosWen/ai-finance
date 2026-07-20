@@ -7,7 +7,6 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from uuid import uuid4
 
 from pydantic import BaseModel, PrivateAttr
 
@@ -51,7 +50,7 @@ class Conversation(BaseModel):
         """新建对话，生成 id，发 ConversationStarted。"""
         now = datetime.now(timezone.utc)
         convo = cls(
-            id=ConversationId(value=uuid4().hex),
+            id=ConversationId.new(),
             agent_id=agent_id,
             status=ConversationStatus.ACTIVE,
             created_at=now,

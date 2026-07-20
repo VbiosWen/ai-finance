@@ -32,6 +32,10 @@ class ConversationAggregateTest(unittest.TestCase):
         self.assertIsInstance(events[0], ConversationStarted)
         self.assertEqual(convo.pull_events(), [])  # 取走后清空
 
+    def test_start_ids_are_time_ordered(self) -> None:
+        ids = [Conversation.start(_agent()).id.value for _ in range(20)]
+        self.assertEqual(ids, sorted(ids))  # 单调 uuid7：ID 序即创建序
+
     def test_post_and_record_append_in_order(self) -> None:
         convo = Conversation.start(_agent())
         convo.post_user_message("查发票 12345")
