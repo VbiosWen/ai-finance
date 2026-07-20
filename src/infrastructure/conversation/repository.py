@@ -59,6 +59,13 @@ class SqlAlchemyConversationRepository(ConversationRepository):
             rows.reverse()  # desc 取回后翻转为时间顺序
             return _to_conversation(head, [_row_to_message(r) for r in rows])
 
+    async def get_head(self, cid: ConversationId) -> Conversation | None:
+        async with self._session_factory() as session:
+            head = await session.get(ConversationRow, cid.value)
+            if head is None:
+                return None
+            return _to_conversation(head, [])
+
     async def load_full(self, cid: ConversationId) -> Conversation | None:
         return await self.get(cid, window=None)
 
