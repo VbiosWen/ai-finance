@@ -26,7 +26,7 @@ def get_skill_config_repo(request: Request) -> SkillConfigRepository:
 def get_agent_service(request: Request) -> AgentService:
     """注入 lifespan 预热的 AgentService 单例。
 
-    单例常驻使 MemorySaver 跨请求存活，thread_id 多轮记忆才能生效。
+    单例常驻使 AsyncPostgresSaver 连接池跨请求存活,thread_id 多轮记忆才能生效。
     """
     agent_service = getattr(request.app.state.container, "agent_service", None)
     if agent_service is None:
