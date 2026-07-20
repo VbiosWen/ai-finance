@@ -16,6 +16,11 @@ class ConversationRepository(ABC):
         ...
 
     @abstractmethod
+    async def get_head(self, cid: ConversationId) -> Conversation | None:
+        """只加载对话头(存在性/状态把门用),不载任何历史消息。"""
+        ...
+
+    @abstractmethod
     async def save(self, convo: Conversation) -> None:
         """upsert 对话头 + 只 INSERT pull_new_messages() 的新消息，不重写历史。"""
         ...

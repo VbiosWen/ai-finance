@@ -12,9 +12,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 采用 DDD 分层架构,单一限界上下文「账票 / billing」,收票与稽核为其内部业务模块。
 
 已落地的子域:
-- **Agent 对话**（`conversation/`）:Conversation 聚合根、SQLAlchemy 持久化、多轮记忆由领域层提供
-- **意图路由**（`services/routing_*`）:LLM 结构化意图识别 → 置信度裁决 → 多技能 Agent 分发
-- **SSE 流式输出**:`/agent/chat/stream` 逐 token 推送
+- **Agent 对话**（`conversation/`）:Conversation 聚合根(纯存储:审计留痕+状态机+领域事件)、SQLAlchemy 持久化;多轮记忆由 LangGraph checkpointer（AsyncPostgresSaver, thread_id=conversation_id）维护
+- **意图路由**（`infrastructure/ai/middleware/routing.py`）:路由进图——RoutingMiddleware 每轮意图识别+置信度裁决,按裁决动态换技能 prompt
+- **上下文工程扩展点**:`build_conversation_agent(context_middleware=[...])` 插槽,内置 SummarizationMiddleware 轮次压缩,自研策略实现 AgentMiddleware 即插即用
+- **SSE 流式输出**:`/agent/chat/stream` 逐 token 推送（routing 帧来自图内 before_agent 节点事件）
 
 ## 环境与常用命令
 
@@ -28,7 +29,7 @@ uv run python main.py
 # 开发热重载
 uv run uvicorn bootstrap.app:create_app --factory --reload
 
-# 运行全部测试（138 个用例, ~31s）
+# 运行全部测试（153 个用例, ~31s）
 uv run python -m unittest discover -s tests
 
 # 运行单个测试(模块.类.方法)
@@ -48,9 +49,11 @@ uv add <package>
 | data_id | 格式 | 说明 |
 |---------|------|------|
 | `postgres` | YAML | 数据库连接 `db_dsn` + 连接池参数 |
-| `llm-config` | YAML | LLM `api_key`、`model`、`base_url` |
+| `llm-config` | YAML | LLM `api_key`、`model`、`base_url`;可选 `summarization` 节（`enabled`/`trigger_tokens`/`keep_messages`,轮次压缩热调参） |
 | `agent-identity` | YAML | Agent 身份定义（`persona`、`tones`） |
 | `skill-configs` | YAML | 技能列表（`name`、`description`、`task_instructions`） |
+
+PostgreSQL 中除 conversation 业务表外,LangGraph 会在启动时自建 checkpoint 表（`checkpoints` 等,AsyncPostgresSaver.setup()）。
 
 ## 架构
 
@@ -93,19 +96,21 @@ uv add <package>
 
 ### 核心链路
 
-**Agent 对话链路**（`/agent/chat[/stream]`）:
-HTTP → `ChatRequest.to_agent_request()` → `RoutingAgentService` → `LlmIntentRecognizer` 识别意图 → `RoutingPolicy` 置信度裁决 → `AgentRegistry` 分发到对应技能 Agent（兜底 `general`） → `AgentResponse`/`AgentStreamEvent` → HTTP 响应/SSE 帧
+**Agent 对话链路**（`/agent/chat[/stream]`,无状态单发,thread_id 不透传）:
+HTTP → `ChatRequest.to_agent_request()` → `LangChainAgentService` → 单图 Agent:`RoutingMiddleware.abefore_agent` 意图识别+`RoutingPolicy` 裁决写入图状态 → 压缩中间件 → ReAct 循环(`awrap_model_call` 按裁决换技能 prompt) → `AgentResponse`/`AgentStreamEvent`（含 routing 帧）→ HTTP 响应/SSE 帧
 
-**对话持久化链路**（`/conversations/messages`）:
-HTTP → `SendMessageBody` → `SendMessageCommand` → `SendMessageUseCase.execute()` → `Conversation.start()/.post_user_message()` → `ContextWindowPolicy` 裁剪窗口 → `AgentService.run()` 无状态执行 → `Conversation.record_assistant_message()` → `ConversationRepository.save()` append-only 落库 → `DomainEventPublisher.publish()` 发事件 → `ChatResult`
+**对话持久化链路**（`/conversations/messages`,多轮记忆入口）:
+HTTP → `SendMessageBody` → `SendMessageCommand` → `SendMessageUseCase.execute()` → `Conversation.start()/.post_user_message()`（领域把门:CLOSED 拒绝） → `AgentService.run(最新一条, thread_id=conversation_id)` → 图内 checkpointer 回放全史+路由+压缩+执行 → `Conversation.record_assistant_message()` → `ConversationRepository.save()` append-only 落库（审计事实源） → `DomainEventPublisher.publish()` → `ChatResult`
+
+记忆与存储双轨:**工作记忆真相源 = LangGraph checkpoint（Postgres,含工具中间消息与摘要）;业务事实源 = conversation 表（审计口径）**。两者独立提交,无跨表事务。
 
 ### 业务子域
 
 | 子域 | 各层位置 | 说明 |
 |------|----------|------|
-| 对话 (Conversation) | `domain/conversation/`, `application/conversation/`, `infrastructure/conversation/`, `interfaces/conversation/` | 聚合根 + SQLAlchemy append-only 仓储 + 窗口策略 |
-| Agent 路由 | `domain/services/routing_policy.py`, `domain/value_objects/intent.py`, `application/services/routing_agent_service.py`, `infrastructure/ai/llm_intent_recognizer.py` | 意图识别 → 置信度裁决 → 多技能分发 |
-| AI 基础设施 | `infrastructure/ai/` | `LLMClientFactory`、`create_react_agent`、`tool_adapter`、`skill_agent_builder` |
+| 对话 (Conversation) | `domain/conversation/`, `application/conversation/`, `infrastructure/conversation/`, `interfaces/conversation/` | 聚合根(纯存储) + SQLAlchemy append-only 仓储 |
+| Agent 路由（图内） | `domain/services/routing_policy.py`, `domain/value_objects/intent.py`, `infrastructure/ai/middleware/routing.py`, `infrastructure/ai/llm_intent_recognizer.py` | RoutingMiddleware:意图识别 → 置信度裁决 → 动态技能 prompt |
+| AI 基础设施 | `infrastructure/ai/` | `LLMClientFactory`、`build_conversation_agent`(单图+中间件)、`react_agent`(AgentService 适配器)、`middleware/`(路由+上下文工程)、`tool_adapter` |
 
 - **跨模块只经领域事件通信**(进程内 message bus),严禁模块间直接 import/调用。
 
@@ -133,6 +138,7 @@ HTTP → `SendMessageBody` → `SendMessageCommand` → `SendMessageUseCase.exec
 | 数据建模 | **Pydantic v2** | 全项目统一使用（`domain` 实体/值对象、`application` DTO、`interfaces` 请求/响应、`infrastructure` 配置） |
 | AI | **LangChain / LangGraph** | ReAct Agent + `with_structured_output` 结构化意图识别 |
 | LLM | **ChatDeepSeek** | 通过 LangChain 适配 |
+| Agent 记忆 | **langgraph-checkpoint-postgres** (AsyncPostgresSaver) | thread_id=conversation_id;与业务表同库不同表,启动时 setup() 建表 |
 | 配置中心 | **Nacos** (gRPC) | 配置拉取 + watcher 热更新 |
 | 运行时 | **greenlet** | SQLAlchemy async 必需 |
 | 测试 | **unittest** (标准库) | 异步用 `asyncio.run()`;仓储用 `aiosqlite` 内存库 |

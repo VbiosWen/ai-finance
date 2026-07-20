@@ -103,6 +103,28 @@ class ConversationRepositoryTest(unittest.TestCase):
 
         asyncio.run(run())
 
+    def test_get_head_loads_status_without_messages(self) -> None:
+        async def run() -> None:
+            repo, _ = await _make_repo()
+            convo = Conversation.start(_agent())
+            convo.post_user_message("第一句")
+            convo.record_assistant_message("第一答")
+            await repo.save(convo)
+
+            head = await repo.get_head(ConversationId(value=convo.id.value))
+            self.assertEqual(head.id.value, convo.id.value)
+            self.assertEqual(head.status, convo.status)
+            self.assertEqual(head.messages, ())  # 头加载不带历史
+
+        asyncio.run(run())
+
+    def test_get_head_missing_returns_none(self) -> None:
+        async def run() -> None:
+            repo, _ = await _make_repo()
+            self.assertIsNone(await repo.get_head(ConversationId(value="f" * 32)))
+
+        asyncio.run(run())
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -12,17 +12,21 @@ from contextlib import AsyncExitStack
 from pydantic import BaseModel, ConfigDict, Field
 
 from application.ports.agent_service import AgentService
-from application.services.routing_agent_service import RoutingAgentService
+from langchain.agents.middleware import SummarizationMiddleware
+
 from domain.services.routing_policy import RoutingPolicy
 from domain.shared.general_skill import GENERAL_SKILL
 from domain.shared.ai_tools import AITool
 from domain.value_objects.agent_identity import AgentIdentity
 from domain.value_objects.routing_config import RoutingConfig
 from domain.value_objects.skill_config import SkillConfig
+from infrastructure.ai.conversation_agent import build_conversation_agent
 from infrastructure.ai.llm_client_factory import LLMClientFactory
 from infrastructure.ai.llm_intent_recognizer import LlmIntentRecognizer
-from infrastructure.ai.skill_agent_builder import build_agent_registry
+from infrastructure.ai.react_agent import LangChainAgentService
 from infrastructure.ai.tool_adapter import adapt_ai_tools
+from infrastructure.client.checkpointer import open_postgres_checkpointer
+from infrastructure.config.database_config import PostgresConfig
 from infrastructure.client.database import DatabaseManager
 from infrastructure.client.nacos import NacosClient, NacosConfig
 from infrastructure.ports import (
@@ -97,7 +101,7 @@ async def build_container() -> Container:
         llm_config_repo = NacosLLMConfigRepository(nacos_client)
         await llm_config_repo.load()
 
-        # 4. AI:LLM + 多技能 Agent 注册表 + 意图识别 + 路由裁决 → RoutingAgentService
+        # 4. AI:LLM + 意图识别 + 路由裁决 + Postgres checkpointer → 单图对话 Agent
         llm_config = llm_config_repo.get()
         llm_factory = LLMClientFactory(llm_config)
         tools: list[AITool] = []
@@ -105,17 +109,36 @@ async def build_container() -> Container:
         identity = agent_identity_repo.get("agent-identity")
         skills = skill_config_repo.get("skill-configs")
 
-        registry = build_agent_registry(
+        llm = llm_factory.create_llm()
+        recognizer = LlmIntentRecognizer(llm)
+        policy = RoutingPolicy(RoutingConfig())
+
+        # 记忆:AsyncPostgresSaver(与业务表同库不同表;启动失败即 fail-fast)
+        pg_config = postgres_config_repo.get_config() or PostgresConfig()
+        checkpointer = await open_postgres_checkpointer(stack, pg_config.db_dsn)
+
+        # 上下文工程插槽:MVP 挂轮次压缩;自研策略在此追加
+        context_middleware: list = []
+        if llm_config.summarization.enabled:
+            context_middleware.append(SummarizationMiddleware(
+                model=llm,
+                trigger=("tokens", llm_config.summarization.trigger_tokens),
+                keep=("messages", llm_config.summarization.keep_messages),
+            ))
+
+        graph = build_conversation_agent(
+            llm=llm,
             identity=identity or _DEFAULT_IDENTITY,
             skills=skills or [],
             general_skill=GENERAL_SKILL,
-            llm_factory=llm_factory,
+            recognizer=recognizer,
+            policy=policy,
+            checkpointer=checkpointer,
+            context_middleware=context_middleware,
         )
-        recognizer = LlmIntentRecognizer(llm_factory.create_llm())
-        policy = RoutingPolicy(RoutingConfig())
 
-        # 5. 组装为对外唯一 AgentService 入口
-        agent_service = RoutingAgentService(recognizer, policy, registry)
+        # 5. 组装为对外唯一 AgentService 入口(适配器包装单图)
+        agent_service = LangChainAgentService(graph)
 
         # 6. 组装容器,关闭栈所有权移交容器
         container = Container(
@@ -131,10 +154,11 @@ async def build_container() -> Container:
             exit_stack=stack.pop_all(),
         )
         logger.info(
-            "组合根装配完成: model=%s, routing=%d 技能（含兜底 %s）",
+            "组合根装配完成: model=%s, 技能=%d（含兜底 %s）, 压缩中间件=%d",
             llm_config.model,
             len(skills or []) + 1,
             GENERAL_SKILL.name,
+            len(context_middleware),
         )
         return container
 
@@ -146,7 +170,6 @@ async def build_container() -> Container:
 from sqlalchemy.ext.asyncio import AsyncEngine, async_sessionmaker
 
 from application.conversation.send_message import SendMessageUseCase
-from domain.conversation.context_window import ContextWindowPolicy
 from infrastructure.conversation.event_publisher import InMemoryEventPublisher
 from infrastructure.conversation.repository import SqlAlchemyConversationRepository
 
@@ -154,12 +177,9 @@ from infrastructure.conversation.repository import SqlAlchemyConversationReposit
 def build_conversation_use_case(
     engine: AsyncEngine,
     agent_service: AgentService,
-    *,
-    window_size: int = 20,
 ) -> SendMessageUseCase:
-    """装配对话用例：SQLAlchemy 仓储 + 进程内发布器 + 窗口策略。"""
+    """装配对话用例:SQLAlchemy 仓储 + 进程内发布器(记忆由 Agent 图 checkpointer 承担)。"""
     session_factory = async_sessionmaker(engine, expire_on_commit=False)
     repo = SqlAlchemyConversationRepository(session_factory)
     publisher = InMemoryEventPublisher()
-    window = ContextWindowPolicy(size=window_size)
-    return SendMessageUseCase(repo, agent_service, publisher, window)
+    return SendMessageUseCase(repo, agent_service, publisher)
