@@ -37,6 +37,18 @@ class ConversationRouterTest(unittest.TestCase):
 
         asyncio.run(run())
 
+    def test_malformed_conversation_id_rejected_422(self) -> None:
+        async def run() -> None:
+            transport = httpx.ASGITransport(app=self.app)
+            async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+                resp = await client.post(
+                    "/conversations/messages",
+                    json={"content": "你好", "conversation_id": "not-a-valid-id"},
+                )
+                self.assertEqual(resp.status_code, 422)  # 边界拒绝，不进用例
+
+        asyncio.run(run())
+
 
 if __name__ == "__main__":
     unittest.main()
