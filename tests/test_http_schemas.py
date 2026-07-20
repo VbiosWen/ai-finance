@@ -8,15 +8,15 @@ from interfaces.http.schemas import ChatMessage, ChatRequest, ChatResponse
 
 
 class ChatRequestTest(unittest.TestCase):
-    def test_to_agent_request_maps_messages(self) -> None:
-        """messages 被转为 [{'role','content'}] 并构成 AgentRequest。"""
+    def test_to_agent_request_strips_thread_id(self) -> None:
+        """/agent/chat 无状态化:客户端 thread_id 不透传进 Agent(防撞他人会话记忆)。"""
         req = ChatRequest(
             messages=[ChatMessage(role="user", content="你好")],
             thread_id="t-1",
         )
         agent_req = req.to_agent_request()
         self.assertIsInstance(agent_req, AgentRequest)
-        self.assertEqual(agent_req.thread_id, "t-1")
+        self.assertIsNone(agent_req.thread_id)
         self.assertEqual(agent_req.messages, [{"role": "user", "content": "你好"}])
 
     def test_default_role_is_user(self) -> None:

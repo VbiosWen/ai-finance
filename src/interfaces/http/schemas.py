@@ -25,10 +25,15 @@ class ChatRequest(BaseModel):
     thread_id: str | None = None
 
     def to_agent_request(self) -> AgentRequest:
-        """翻译为 application 层 AgentRequest。"""
+        """翻译为 application 层 AgentRequest。
+
+        /agent/chat 为无状态单发端点:客户端 thread_id 不透传进 Agent
+        (Agent 图带 checkpointer 后,透传等于允许绕过会话端点续聊任意
+        会话的记忆);字段保留仅作请求日志关联。多轮走 /conversations/messages。
+        """
         return AgentRequest(
             messages=[m.model_dump() for m in self.messages],
-            thread_id=self.thread_id,
+            thread_id=None,
         )
 
 
