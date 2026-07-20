@@ -10,8 +10,7 @@ from domain.value_objects.agent_prompt_config import AgentPromptConfig
 from domain.value_objects.skill_config import SkillConfig
 from infrastructure.ai.agent_factory import create_react_agent
 from infrastructure.ai.llm_client_factory import LLMClientFactory
-# 注：LangChainAgentService 现误置于 interfaces/ai（设计 §12 遗留债）
-from interfaces.ai.react_agent import LangChainAgentService
+from infrastructure.ai.react_agent import LangChainAgentService
 
 logger = logging.getLogger("ai-finance")
 

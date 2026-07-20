@@ -1,12 +1,12 @@
-"""LangChain Agent 适配器——实现 AgentService 端口。
+"""LangChain Agent 适配器——实现 AgentService 端口(基础设施层出站适配器)。
 
-将基础设施层装配的 LangChain ReAct Agent，包装为 application 层
+将装配好的 conversation agent（单图 + 中间件管道）包装为 application 层
 定义的 AgentService 端口，供上层（FastAPI 路由等）使用。
 
 职责：
 - 消息格式转换（dict ↔ LangChain Message）
-- 非流式调用（run）→ ainvoke
-- 流式调用（stream）→ astream_events，逐事件推送
+- 非流式调用（run）→ ainvoke,回填 routed_skill
+- 流式调用（stream）→ astream_events,映射 routing/token/tool/done 帧
 """
 from __future__ import annotations
 
@@ -63,6 +63,7 @@ class LangChainAgentService:
             reply=reply,
             thread_id=request.thread_id,
             tool_calls_count=tool_call_count,
+            routed_skill=result.get("routed_skill"),
         )
 
     async def stream(self, request: AgentRequest) -> AsyncIterator[AgentStreamEvent]:
@@ -96,6 +97,13 @@ class LangChainAgentService:
 # ---------------------------------------------------------------------------
 # 模块级工具函数
 # ---------------------------------------------------------------------------
+
+# RoutingMiddleware.before_agent 在事件流中的节点名(类名契约,改类名需同步)
+_ROUTING_NODE = "RoutingMiddleware.before_agent"
+
+
+def _routing_message(skill: str, is_fallback: bool) -> str:
+    return "未匹配专业技能，转通用助手" if is_fallback else f"识别意图：{skill}"
 
 
 def _to_langchain_messages(
@@ -191,6 +199,19 @@ def _map_event(event: dict[str, Any]) -> AgentStreamEvent | None:
             content=str(output),
             timestamp=now,
         )
+
+    # --- 路由裁决(图内 before_agent 节点闭合) ---
+    if event_name == "on_chain_end" and event.get("name") == _ROUTING_NODE:
+        output = event.get("data", {}).get("output") or {}
+        skill = output.get("routed_skill")
+        if skill:
+            return AgentStreamEvent(
+                event_type="routing",
+                skill_name=skill,
+                content=_routing_message(skill, bool(output.get("routing_fallback"))),
+                timestamp=now,
+            )
+        return None
 
     # --- 顶层 chain 结束 → 对话完成 ---
     if event_name == "on_chain_end":
