@@ -25,7 +25,7 @@ class AgentRequest(BaseModel):
     )
     thread_id: str | None = Field(
         default=None,
-        description="对话线程 ID，传入可恢复之前的对话上下文",
+        description="对话线程 ID(= conversation_id),驱动 LangGraph checkpointer 多轮记忆;不传则单发无记忆",
     )
 
 

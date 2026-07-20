@@ -1,7 +1,7 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1784516900.3343215,
-    "ast_hash": "f8074c0180a7bec03fcb4eb6b81cfe4f",
+    "mtime": 1784521062.7888849,
+    "ast_hash": "c1aebdde741f614f6acc7112c9dd192f",
     "semantic_hash": ""
   },
   "docker/init-db.sql": {
@@ -120,7 +120,7 @@
     "semantic_hash": "77b37fb37968f22b71c626582aca0bd6"
   },
   "src/domain/conversation/aggregate.py": {
-    "mtime": 1784480233.0491374,
+    "mtime": 1784517140.5346076,
     "ast_hash": "390537d22a76e4323f83722ad014572f",
     "semantic_hash": ""
   },
@@ -140,7 +140,7 @@
     "semantic_hash": "89f3c46262896efb7fd3ff9d88531b77"
   },
   "src/domain/conversation/value_objects.py": {
-    "mtime": 1784479828.11976,
+    "mtime": 1784517140.5348265,
     "ast_hash": "51e9b6a4a497ef3d1ac02b62e065acd5",
     "semantic_hash": ""
   },
@@ -450,7 +450,7 @@
     "semantic_hash": "5084a1bff7493874ecb5b43fa364dfb9"
   },
   "src/interfaces/conversation/schemas.py": {
-    "mtime": 1784516651.612894,
+    "mtime": 1784517140.5352418,
     "ast_hash": "7f9b0ef6c4c55cd30dbb4760fdbba77b",
     "semantic_hash": ""
   },
@@ -545,7 +545,7 @@
     "semantic_hash": "85920b47acd9bfdd67e085c68a6ca96e"
   },
   "tests/test_conversation_aggregate.py": {
-    "mtime": 1784480223.451047,
+    "mtime": 1784517140.5354583,
     "ast_hash": "2e2e2c7635e74616dd36779900369d1d",
     "semantic_hash": ""
   },
@@ -565,17 +565,17 @@
     "semantic_hash": "940a1e155b6126917135bb51d9dd0a07"
   },
   "tests/test_conversation_repository.py": {
-    "mtime": 1784479831.0176558,
+    "mtime": 1784517140.535664,
     "ast_hash": "546c76c23cdbd53f455f62cfa760af82",
     "semantic_hash": ""
   },
   "tests/test_conversation_router.py": {
-    "mtime": 1784516636.928406,
+    "mtime": 1784517140.5358787,
     "ast_hash": "b9c5346475c2dc8bcbc635a5d84c7e94",
     "semantic_hash": ""
   },
   "tests/test_conversation_value_objects.py": {
-    "mtime": 1784479812.3074431,
+    "mtime": 1784517140.5360744,
     "ast_hash": "f600006ca48250e935dab05813aff468",
     "semantic_hash": ""
   },
@@ -725,23 +725,33 @@
     "semantic_hash": ""
   },
   "src/domain/shared/id_generator.py": {
-    "mtime": 1784479722.9996092,
+    "mtime": 1784517140.5350266,
     "ast_hash": "ccf063c78906a51389c9ad11fdaa9e8d",
     "semantic_hash": ""
   },
   "tests/test_id_generator.py": {
-    "mtime": 1784479722.9997134,
+    "mtime": 1784517140.5362554,
     "ast_hash": "9e52b6c9a2a4607627d5b03e5fa06c15",
     "semantic_hash": ""
   },
   "docs/superpowers/plans/2026-07-20-conversation-uuid7-id.md": {
-    "mtime": 1784479463.1598458,
+    "mtime": 1784517140.5225906,
     "ast_hash": "edad039f118d4c4544854a7c220dcea1",
     "semantic_hash": ""
   },
   "docs/superpowers/specs/2026-07-20-conversation-uuid7-id-design.md": {
     "mtime": 1784478636.089156,
     "ast_hash": "31f6629775b8ebc4cdbd52b5c8144a43",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md": {
+    "mtime": 1784521025.376055,
+    "ast_hash": "8b0ef6e747bbb11539b0c758ecca2316",
+    "semantic_hash": ""
+  },
+  "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md": {
+    "mtime": 1784518481.1118593,
+    "ast_hash": "ecd71987d9a2eb6a285e522dbac6b1ee",
     "semantic_hash": ""
   }
 }
