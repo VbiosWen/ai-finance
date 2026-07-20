@@ -215,8 +215,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_application_conversation_send_message",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "send_message.py"
     },
     {
@@ -226,8 +226,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_application_conversation_send_message_sendmessageusecase",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "sendmessageusecase"
     },
     {
@@ -237,8 +237,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_application_conversation_send_message_sendmessageusecase_init",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": ".__init__()"
     },
     {
@@ -259,8 +259,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_application_conversation_send_message_rationale_1",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "\u53d1\u9001\u6d88\u606f\u7528\u4f8b \u2014\u2014 \u5bf9\u8bdd\u95ed\u73af\u7f16\u6392\u3002\u4e1a\u52a1\u89c4\u5219\u5728 domain,\u6b64\u5904\u53ea\u7f16\u6392\u3002"
     },
     {
@@ -303,8 +303,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_application_dto_agent_dto_agentrequest",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "agentrequest"
     },
     {
@@ -336,8 +336,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_application_dto_agent_dto_agentstreamevent",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "agentstreamevent"
     },
     {
@@ -358,8 +358,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_application_dto_agent_dto_rationale_15",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "agent \u8c03\u7528\u8bf7\u6c42\u3002      attributes:         messages: \u5bf9\u8bdd\u6d88\u606f\u5217\u8868,\u6bcf\u6761\u542b role \u548c content\u3002"
     },
     {
@@ -380,8 +380,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_application_dto_agent_dto_rationale_50",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "agent \u6d41\u5f0f\u4e8b\u4ef6\u3002      \u652f\u6301\u516d\u79cd\u4e8b\u4ef6\u7c7b\u578b:     - token: llm \u8f93\u51fa\u7684\u589e\u91cf\u6587\u672c\u7247\u6bb5\u3002     - tool_start: \u5de5\u5177\u5f00\u59cb\u6267\u884c\u3002"
     },
     {
@@ -446,8 +446,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_application_ports_agent_service_agentservice_run",
-      "community": 16,
-      "community_name": "Agent Service Test Support",
+      "community": 5,
+      "community_name": "Agent Config API Routes",
       "norm_label": ".run()"
     },
     {
@@ -457,8 +457,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_application_ports_agent_service_agentservice_stream",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 5,
+      "community_name": "Agent Config API Routes",
       "norm_label": ".stream()"
     },
     {
@@ -490,8 +490,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_application_ports_agent_service_rationale_25",
-      "community": 16,
-      "community_name": "Agent Service Test Support",
+      "community": 5,
+      "community_name": "Agent Config API Routes",
       "norm_label": "\u975e\u6d41\u5f0f\u8c03\u7528 agent,\u8fd4\u56de\u5b8c\u6574\u7ed3\u679c\u3002          args:             request: \u5305\u542b\u6d88\u606f\u5217\u8868\u548c\u53ef\u9009 thread_id \u7684\u8bf7\u6c42\u3002"
     },
     {
@@ -501,8 +501,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_application_ports_agent_service_rationale_36",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 5,
+      "community_name": "Agent Config API Routes",
       "norm_label": "\u6d41\u5f0f\u8c03\u7528 agent,\u9010\u4e8b\u4ef6\u63a8\u9001\u3002          args:             request: \u5305\u542b\u6d88\u606f\u5217\u8868\u548c\u53ef\u9009 thread_id \u7684\u8bf7\u6c42\u3002"
     },
     {
@@ -512,8 +512,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_application_ports_event_publisher",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "event_publisher.py"
     },
     {
@@ -523,8 +523,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_application_ports_event_publisher_domaineventpublisher",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "domaineventpublisher"
     },
     {
@@ -534,8 +534,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_application_ports_event_publisher_py_protocol",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "protocol"
     },
     {
@@ -545,8 +545,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_application_ports_event_publisher_domaineventpublisher_publish",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".publish()"
     },
     {
@@ -556,8 +556,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_application_ports_event_publisher_rationale_1",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "\u9886\u57df\u4e8b\u4ef6\u53d1\u5e03\u7aef\u53e3(application)\u3002infrastructure \u63d0\u4f9b\u8fdb\u7a0b\u5185\u5b9e\u73b0\u3002"
     },
     {
@@ -600,8 +600,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_application_ports_intent_recognizer_intentrecognizer_recognize",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 32,
+      "community_name": "Agent Service Port Tests",
       "norm_label": ".recognize()"
     },
     {
@@ -622,8 +622,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_application_ports_intent_recognizer_rationale_16",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 32,
+      "community_name": "Agent Service Port Tests",
       "norm_label": "\u8bc6\u522b\u5f53\u524d\u5bf9\u8bdd\u6700\u5339\u914d\u7684\u6280\u80fd\u3002\u57fa\u7840\u8bbe\u65bd\u5c42\u7528 llm \u7ed3\u6784\u5316\u8f93\u51fa\u5b9e\u73b0\u3002"
     },
     {
@@ -820,8 +820,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_application_services_routing_agent_service",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 32,
+      "community_name": "Agent Service Port Tests",
       "norm_label": "routing_agent_service.py"
     },
     {
@@ -831,8 +831,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_application_services_routing_agent_service_routing_message",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 32,
+      "community_name": "Agent Service Port Tests",
       "norm_label": "_routing_message()"
     },
     {
@@ -897,8 +897,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_application_services_routing_agent_service_rationale_1",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 32,
+      "community_name": "Agent Service Port Tests",
       "norm_label": "\u8def\u7531 agent \u670d\u52a1 \u2014\u2014 \u5b9e\u73b0 agentservice \u7aef\u53e3,\u5185\u655b\u8def\u7531\u590d\u6742\u5ea6\u3002  \u7f16\u6392:\u610f\u56fe\u8bc6\u522b \u2192 routingpolicy \u88c1\u51b3 \u2192 \u5206\u53d1\u5230\u9009\u4e2d\u7684\u6280"
     },
     {
@@ -1018,8 +1018,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_bootstrap_container",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "container.py"
     },
     {
@@ -1062,8 +1062,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "src_bootstrap_container_build_container",
-      "community": 26,
-      "community_name": "Tool Adapter Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "build_container()"
     },
     {
@@ -1073,8 +1073,8 @@
       "source_location": "L154",
       "_origin": "ast",
       "id": "src_bootstrap_container_build_conversation_use_case",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "build_conversation_use_case()"
     },
     {
@@ -1084,8 +1084,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_bootstrap_container_py_asyncengine",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "asyncengine"
     },
     {
@@ -1095,8 +1095,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_bootstrap_container_rationale_1",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "\u7ec4\u5408\u6839:\u96c6\u4e2d\u88c5\u914d\u5404\u5c42\u4f9d\u8d56\u3002  build_container() \u4e00\u6b21\u6027\u5b8c\u6210\u5168\u94fe\u88c5\u914d(nacos \u2192 \u914d\u7f6e\u4ed3\u5e93 \u2192 \u6570\u636e\u5e93 \u2192 agent), \u4ea7\u51fa\u4e0d\u53ef\u53d8 co"
     },
     {
@@ -1128,8 +1128,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "src_bootstrap_container_rationale_71",
-      "community": 26,
-      "community_name": "Tool Adapter Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "\u6784\u5efa\u5e76\u8fd4\u56de\u7ec4\u5408\u6839\u5bb9\u5668(async \u5168\u94fe\u88c5\u914d)\u3002      \u4efb\u4e00\u6b65\u5931\u8d25\u65f6,asyncexitstack \u9006\u5e8f\u56de\u6536\u5df2\u542f\u52a8\u8d44\u6e90\u540e\u5f02\u5e38\u4e0a\u629b(fail-fast)\u3002"
     },
     {
@@ -1139,8 +1139,8 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "src_bootstrap_container_rationale_160",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "\u88c5\u914d\u5bf9\u8bdd\u7528\u4f8b:sqlalchemy \u4ed3\u50a8 + \u8fdb\u7a0b\u5185\u53d1\u5e03\u5668 + \u7a97\u53e3\u7b56\u7565\u3002"
     },
     {
@@ -1238,8 +1238,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_domain_conversation_aggregate_conversationclosederror",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "conversationclosederror"
     },
     {
@@ -1293,8 +1293,8 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_domain_conversation_aggregate_conversation_reconstitute",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".reconstitute()"
     },
     {
@@ -1359,8 +1359,8 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "src_domain_conversation_aggregate_conversation_pull_events",
-      "community": 9,
-      "community_name": "Conversation Value Objects",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".pull_events()"
     },
     {
@@ -1436,8 +1436,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_domain_conversation_aggregate_rationale_75",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "\u4ed3\u50a8\u91cd\u5efa:\u88c5\u5165\u5386\u53f2\u6d88\u606f,\u4e0d\u53d1\u4e8b\u4ef6\u3001\u4e0d\u5165 pending\u3002"
     },
     {
@@ -1480,8 +1480,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_conversation_context_window",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "context_window.py"
     },
     {
@@ -1491,8 +1491,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_domain_conversation_context_window_contextwindowpolicy",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "contextwindowpolicy"
     },
     {
@@ -1502,8 +1502,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_domain_conversation_context_window_contextwindowpolicy_init",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": ".__init__()"
     },
     {
@@ -1524,8 +1524,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_conversation_context_window_rationale_1",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "\u4e0a\u4e0b\u6587\u7a97\u53e3\u7b56\u7565 \u2014\u2014 \u9886\u57df\u51b3\u7b56,\u53ef\u63d2\u62d4\u3002mvp \u7528\u300c\u6700\u8fd1 n \u6761\u300d\u3002"
     },
     {
@@ -1546,8 +1546,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_conversation_events",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "events.py"
     },
     {
@@ -1557,8 +1557,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_domain_conversation_events_conversationstarted",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "conversationstarted"
     },
     {
@@ -1568,8 +1568,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_domain_conversation_events_assistantresponded",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "assistantresponded"
     },
     {
@@ -1579,8 +1579,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_domain_conversation_events_conversationclosed",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "conversationclosed"
     },
     {
@@ -1590,8 +1590,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_conversation_events_rationale_1",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "\u5bf9\u8bdd\u5b50\u57df\u9886\u57df\u4e8b\u4ef6 \u2014\u2014 \u53ea\u8868\u8fbe\u300c\u5df2\u53d1\u751f\u7684\u4e8b\u5b9e\u300d\u3002"
     },
     {
@@ -1700,8 +1700,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "value_objects.py"
     },
     {
@@ -1711,8 +1711,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_conversationid",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "conversationid"
     },
     {
@@ -1722,8 +1722,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_py_basemodel",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "basemodel"
     },
     {
@@ -1733,8 +1733,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_conversationid_new",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 88,
+      "community_name": "uuid7",
       "norm_label": ".new()"
     },
     {
@@ -1744,8 +1744,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_messagerole",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "messagerole"
     },
     {
@@ -1755,8 +1755,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "str",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "str"
     },
     {
@@ -1766,8 +1766,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "enum",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "enum"
     },
     {
@@ -1777,8 +1777,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_conversationstatus",
-      "community": 97,
-      "community_name": "ConversationStatus",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "conversationstatus"
     },
     {
@@ -1788,8 +1788,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_toolcallrecord",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "toolcallrecord"
     },
     {
@@ -1810,8 +1810,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_rationale_13",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "\u5bf9\u8bdd\u6807\u8bc6(uuid7 hex,32 \u4f4d\u5c0f\u5199\u5341\u516d\u8fdb\u5236,\u8d8b\u52bf\u9012\u589e)\u3002"
     },
     {
@@ -1821,8 +1821,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_domain_conversation_value_objects_rationale_20",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 88,
+      "community_name": "uuid7",
       "norm_label": "\u751f\u6210\u65b0\u6807\u8bc6\u2014\u2014\u5355\u8c03 uuid7,id \u5b57\u5178\u5e8f\u5373\u521b\u5efa\u65f6\u95f4\u5e8f\u3002"
     },
     {
@@ -1920,8 +1920,8 @@
       "source_location": "L96",
       "_origin": "ast",
       "id": "src_domain_entities_agent_entity_agententity_update_prompt",
-      "community": 28,
-      "community_name": "Domain Prompts & General Skills",
+      "community": 42,
+      "community_name": "Agent Router Tool Domain",
       "norm_label": ".update_prompt()"
     },
     {
@@ -2008,8 +2008,8 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "src_domain_entities_agent_entity_rationale_97",
-      "community": 28,
-      "community_name": "Domain Prompts & General Skills",
+      "community": 42,
+      "community_name": "Agent Router Tool Domain",
       "norm_label": "\u66f4\u65b0\u63d0\u793a\u8bcd\u914d\u7f6e\u3002          \u914d\u7f6e\u66f4\u65b0\u540e,\u57fa\u7840\u8bbe\u65bd\u5c42\u9700\u91cd\u65b0\u7f16\u8bd1 agent\u3002"
     },
     {
@@ -2019,8 +2019,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_init",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "__init__.py"
     },
     {
@@ -2030,8 +2030,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_init_rationale_1",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u9886\u57df\u7aef\u53e3\u2014\u2014\u5b9a\u4e49\u4ed3\u50a8\u3001\u670d\u52a1\u7b49\u62bd\u8c61\u5951\u7ea6,\u7531\u57fa\u7840\u8bbe\u65bd\u5c42\u5b9e\u73b0\u3002"
     },
     {
@@ -2041,8 +2041,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agent_identity_repository.py"
     },
     {
@@ -2052,8 +2052,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_agentidentityrepository",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agentidentityrepository"
     },
     {
@@ -2063,8 +2063,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_agentidentityrepository_get",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": ".get()"
     },
     {
@@ -2074,8 +2074,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_agentidentityrepository_watch",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": ".watch()"
     },
     {
@@ -2085,8 +2085,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_rationale_1",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agentidentity \u914d\u7f6e\u4ed3\u50a8\u7aef\u53e3\u3002  \u5b9a\u4e49 agent \u8eab\u4efd\u5b9a\u4e49\u914d\u7f6e\u7684\u8bbf\u95ee\u5951\u7ea6,\u7531\u57fa\u7840\u8bbe\u65bd\u5c42 nacos \u9002\u914d\u5668\u5b9e\u73b0\u3002"
     },
     {
@@ -2096,8 +2096,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_rationale_16",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agent \u8eab\u4efd\u5b9a\u4e49\u7684\u914d\u7f6e\u4ed3\u50a8\u3002      \u6bcf\u4e2a key \u5bf9\u5e94\u4e00\u4e2a ``agentidentity`` \u5b9e\u4f8b\u3002"
     },
     {
@@ -2107,8 +2107,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_rationale_23",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u83b7\u53d6\u6307\u5b9a key \u7684 agent \u8eab\u4efd\u5b9a\u4e49\u3002          args:             key: \u914d\u7f6e\u952e(\u5982 ``\"agent-identity\"`"
     },
     {
@@ -2118,8 +2118,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_domain_ports_agent_identity_repository_rationale_39",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u6ce8\u518c agentidentity \u53d8\u66f4\u56de\u8c03\u3002          args:             callback: \u63a5\u6536\u65b0\u7684 agentidentity \u5b9e"
     },
     {
@@ -2129,8 +2129,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "config_repository.py"
     },
     {
@@ -2140,8 +2140,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_configrepository",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "configrepository"
     },
     {
@@ -2151,8 +2151,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_py_abc",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "abc"
     },
     {
@@ -2162,8 +2162,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_configrepository_get",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": ".get()"
     },
     {
@@ -2173,8 +2173,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "p",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "p"
     },
     {
@@ -2184,8 +2184,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "t",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "t"
     },
     {
@@ -2195,8 +2195,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_configrepository_watch",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": ".watch()"
     },
     {
@@ -2206,8 +2206,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_rationale_1",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u914d\u7f6e\u4ed3\u50a8\u6cdb\u578b\u7aef\u53e3\u3002  \u5b9a\u4e49\u4e86\u4ece\u5916\u90e8\u914d\u7f6e\u6e90(nacos\u3001\u672c\u5730\u6587\u4ef6\u7b49)\u8bfb\u53d6\u548c\u76d1\u542c\u914d\u7f6e\u53d8\u66f4\u7684\u901a\u7528\u62bd\u8c61\u3002 \u5177\u4f53\u4e1a\u52a1\u914d\u7f6e(agentidentity\u3001skillconfi"
     },
     {
@@ -2217,8 +2217,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_rationale_20",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u914d\u7f6e\u4ed3\u50a8\u62bd\u8c61\u57fa\u7c7b\u3002      \u5b9a\u4e49 key-value \u98ce\u683c\u7684\u914d\u7f6e\u8bbf\u95ee\u6a21\u5f0f,\u6bcf\u4e2a\u5177\u4f53\u4ed3\u50a8\u8d1f\u8d23\u4e00\u79cd\u914d\u7f6e\u7c7b\u578b\u3002      type parameters:"
     },
     {
@@ -2228,8 +2228,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_rationale_31",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u6309\u952e\u67e5\u8be2\u914d\u7f6e\u3002          args:             key: \u914d\u7f6e\u952e\u3002          returns:             \u5bf9\u5e94\u7c7b\u578b\u7684"
     },
     {
@@ -2239,8 +2239,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_domain_ports_config_repository_rationale_47",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "\u6ce8\u518c\u914d\u7f6e\u53d8\u66f4\u56de\u8c03\u3002          \u5f53\u8fdc\u7a0b\u914d\u7f6e\u53d1\u751f\u70ed\u66f4\u65b0\u65f6,\u6240\u6709\u5df2\u6ce8\u518c\u7684\u56de\u8c03\u4f1a\u6309\u5e8f\u89e6\u53d1\u3002          args:             callbac"
     },
     {
@@ -2250,8 +2250,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "skill_config_repository.py"
     },
     {
@@ -2261,8 +2261,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_skillconfigrepository",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": "skillconfigrepository"
     },
     {
@@ -2272,8 +2272,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_skillconfigrepository_get",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": ".get()"
     },
     {
@@ -2283,8 +2283,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_skillconfigrepository_watch",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": ".watch()"
     },
     {
@@ -2294,8 +2294,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_rationale_1",
-      "community": 4,
-      "community_name": "Infrastructure AI Tools & Adapters",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "skillconfig \u914d\u7f6e\u4ed3\u50a8\u7aef\u53e3\u3002  \u5b9a\u4e49\u6280\u80fd\u914d\u7f6e\u7684\u8bbf\u95ee\u5951\u7ea6,\u7531\u57fa\u7840\u8bbe\u65bd\u5c42 nacos \u9002\u914d\u5668\u5b9e\u73b0\u3002 \u6bcf\u4e2a key \u5bf9\u5e94\u4e00\u7ec4\u6280\u80fd\u914d\u7f6e\u5217\u8868(\u652f\u6301\u591a\u6280\u80fd\u573a\u666f)\u3002"
     },
     {
@@ -2305,8 +2305,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_rationale_17",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": "\u6280\u80fd\u914d\u7f6e\u4ed3\u50a8\u3002      \u6bcf\u4e2a key \u5bf9\u5e94\u4e00\u4e2a ``skillconfig`` \u5217\u8868(\u4e00\u4e2a agent \u53ef\u5173\u8054\u591a\u4e2a\u6280\u80fd)\u3002"
     },
     {
@@ -2316,8 +2316,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_rationale_24",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": "\u83b7\u53d6\u6307\u5b9a key \u7684\u6280\u80fd\u914d\u7f6e\u5217\u8868\u3002          args:             key: \u914d\u7f6e\u952e(\u5982 ``\"skill-configs\"``)\u3002"
     },
     {
@@ -2327,8 +2327,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_domain_ports_skill_config_repository_rationale_39",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": "\u6ce8\u518c\u6280\u80fd\u914d\u7f6e\u53d8\u66f4\u56de\u8c03\u3002          args:             callback: \u63a5\u6536\u65b0\u7684 skillconfig \u5217\u8868\u7684\u56de\u8c03\u51fd\u6570\u3002"
     },
     {
@@ -2360,8 +2360,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_services_routing_policy",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "routing_policy.py"
     },
     {
@@ -2371,8 +2371,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_domain_services_routing_policy_routingpolicy",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "routingpolicy"
     },
     {
@@ -2382,8 +2382,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_domain_services_routing_policy_routingpolicy_init",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": ".__init__()"
     },
     {
@@ -2393,8 +2393,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_domain_services_routing_policy_routingpolicy_fallback_name",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": ".fallback_name()"
     },
     {
@@ -2415,8 +2415,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_services_routing_policy_rationale_1",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "\u8def\u7531\u88c1\u51b3\u9886\u57df\u670d\u52a1 \u2014\u2014 \u65e0\u72b6\u6001,\u8131\u79bb llm \u53ef\u5355\u6d4b\u3002"
     },
     {
@@ -2459,8 +2459,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "ai_tools.py"
     },
     {
@@ -2492,8 +2492,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_aitool",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "aitool"
     },
     {
@@ -2503,8 +2503,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_py_abc",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "abc"
     },
     {
@@ -2514,8 +2514,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_aitool_name",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": ".name()"
     },
     {
@@ -2525,8 +2525,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_aitool_description",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": ".description()"
     },
     {
@@ -2536,8 +2536,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_aitool_execute",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": ".execute()"
     },
     {
@@ -2547,8 +2547,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_rationale_1",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "ai \u5de5\u5177\u7aef\u53e3\u2014\u2014\u5b9a\u4e49\u5de5\u5177\u5951\u7ea6\u3002  \u9886\u57df\u5c42\u4e0d\u4f9d\u8d56\u4efb\u4f55\u6846\u67b6(\u5982 langchain)\u3002 \u5177\u4f53\u5de5\u5177\u7684\u8bed\u4e49(\u505a\u4ec0\u4e48)\u5728\u9886\u57df\u5c42\u5b9a\u4e49; \u5de5\u5177\u7684 langchain \u5305\u88c5("
     },
     {
@@ -2558,8 +2558,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_rationale_26",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "ai \u5de5\u5177\u7aef\u53e3(\u62bd\u8c61\u57fa\u7c7b)\u3002      \u6bcf\u4e00\u4e2a\u9886\u57df\u5de5\u5177\u9700\u5b9e\u73b0\u6b64\u63a5\u53e3,\u5b9a\u4e49:     - name: llm \u7528\u4e8e\u8bc6\u522b\u7684\u5de5\u5177\u540d\u79f0\u3002     - descripti"
     },
     {
@@ -2569,8 +2569,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_rationale_50",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "\u5de5\u5177\u63cf\u8ff0\u3002llm \u9605\u8bfb\u6b64\u6587\u672c\u51b3\u5b9a\u4f55\u65f6\u8c03\u7528\u5de5\u5177\u3002          \u5efa\u8bae\u5305\u542b:\u529f\u80fd\u8bf4\u660e\u3001\u9002\u7528\u573a\u666f\u3001\u53c2\u6570\u542b\u4e49\u3002"
     },
     {
@@ -2580,8 +2580,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_domain_shared_ai_tools_rationale_58",
-      "community": 92,
-      "community_name": "AITool",
+      "community": 10,
+      "community_name": "Domain Shared AI Tools",
       "norm_label": "\u6267\u884c\u5de5\u5177\u903b\u8f91\u3002          args:             **kwargs: llm \u4f20\u5165\u7684\u53c2\u6570(\u5b57\u7b26\u4e32\u952e\u503c\u5bf9),\u7531\u5177\u4f53\u5de5\u5177\u81ea\u884c\u89e3\u6790\u548c\u6821\u9a8c\u3002"
     },
     {
@@ -2602,8 +2602,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_domain_shared_events_domainevent",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "domainevent"
     },
     {
@@ -2613,8 +2613,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_domain_shared_events_py_basemodel",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "basemodel"
     },
     {
@@ -2833,8 +2833,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_domain_tools_skill_lookup_skilllookuptool_init",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": ".__init__()"
     },
     {
@@ -2877,8 +2877,8 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_domain_tools_skill_lookup_rationale_42",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": "\u521d\u59cb\u5316\u6280\u80fd\u67e5\u8be2\u5de5\u5177\u3002          args:             skill_repo: \u6280\u80fd\u914d\u7f6e\u4ed3\u50a8(\u542b\u5b8c\u6574 skillconfig)\u3002"
     },
     {
@@ -3240,8 +3240,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_value_objects_routing_config",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "routing_config.py"
     },
     {
@@ -3251,8 +3251,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_domain_value_objects_routing_config_routingconfig",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "routingconfig"
     },
     {
@@ -3262,8 +3262,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_domain_value_objects_routing_config_py_basemodel",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "basemodel"
     },
     {
@@ -3317,8 +3317,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_value_objects_skill_ref",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": "skill_ref.py"
     },
     {
@@ -3328,8 +3328,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_domain_value_objects_skill_ref_skillref",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": "skillref"
     },
     {
@@ -3339,8 +3339,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_domain_value_objects_skill_ref_py_basemodel",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": "basemodel"
     },
     {
@@ -3350,8 +3350,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_domain_value_objects_skill_ref_rationale_1",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": "\u6280\u80fd\u8f7b\u91cf\u5f15\u7528 \u2014\u2014 \u4e0d\u53ef\u53d8\u503c\u5bf9\u8c61\u3002  \u4e0e ``skillconfig`` \u4e0d\u540c,skillref \u4ec5\u542b\u6280\u80fd\u7684\u6807\u8bc6\u4e0e\u4e00\u53e5\u8bdd\u7b80\u4ecb, \u4e0d\u5305\u542b\u5b8c\u6574\u6307\u4ee4\u3002\u7528\u4e8e agent"
     },
     {
@@ -3361,8 +3361,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_domain_value_objects_skill_ref_rationale_11",
-      "community": 98,
-      "community_name": "SkillRef",
+      "community": 11,
+      "community_name": "Domain Value Objects (Agent Identity, Skill)",
       "norm_label": "\u6280\u80fd\u7684\u8f7b\u91cf\u5f15\u7528(\u540d\u79f0 + \u7b80\u4ecb)\u3002      llm \u9605\u8bfb\u6b64\u5f15\u7528\u5224\u65ad\u662f\u5426\u9700\u8981\u8be5\u6280\u80fd,\u9700\u8981\u65f6\u901a\u8fc7 ``lookup_skill`` \u5de5\u5177     \u67e5\u8be2 ``ski"
     },
     {
@@ -3416,8 +3416,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_ai_agent_factory",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "agent_factory.py"
     },
     {
@@ -3427,8 +3427,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_infrastructure_ai_agent_factory_create_react_agent",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "create_react_agent()"
     },
     {
@@ -3438,8 +3438,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_infrastructure_ai_agent_factory_py_any",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "any"
     },
     {
@@ -3449,8 +3449,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_ai_agent_factory_rationale_1",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "react agent \u5de5\u5382\u2014\u2014\u57fa\u4e8e langchain create_agent \u7ec4\u88c5 agent\u3002  langchain 1.3.13 \u4e2d create_r"
     },
     {
@@ -3460,8 +3460,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_infrastructure_ai_agent_factory_rationale_25",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "\u521b\u5efa react agent\u3002      \u4f7f\u7528 langchain \u7684 create_agent api,\u5e95\u5c42\u57fa\u4e8e langgraph stategraph,"
     },
     {
@@ -3493,8 +3493,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_infrastructure_ai_dispatch_tool_dispatchtoskilltool_init",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 94,
+      "community_name": "DispatchToSkillTool",
       "norm_label": ".__init__()"
     },
     {
@@ -3559,8 +3559,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_infrastructure_ai_dispatch_tool_rationale_50",
-      "community": 96,
-      "community_name": "SkillConfigRepository",
+      "community": 94,
+      "community_name": "DispatchToSkillTool",
       "norm_label": "\u521d\u59cb\u5316\u5206\u6d3e\u5de5\u5177\u3002          args:             agent_factory: \u5b50 agent \u5de5\u5382(\u8d1f\u8d23\u7f16\u8bd1\u548c\u7f13\u5b58)\u3002"
     },
     {
@@ -3592,8 +3592,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_client_factory",
-      "community": 37,
-      "community_name": "Nacos Client Infrastructure Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "llm_client_factory.py"
     },
     {
@@ -3614,8 +3614,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_client_factory_llmclientfactory_init",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".__init__()"
     },
     {
@@ -3625,8 +3625,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_client_factory_llmclientfactory_from_config",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".from_config()"
     },
     {
@@ -3669,8 +3669,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "llm_intent_recognizer.py"
     },
     {
@@ -3680,8 +3680,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_build_classify_prompt",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "_build_classify_prompt()"
     },
     {
@@ -3691,8 +3691,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_llmintentrecognizer",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "llmintentrecognizer"
     },
     {
@@ -3702,8 +3702,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_llmintentrecognizer_init",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".__init__()"
     },
     {
@@ -3713,8 +3713,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_py_any",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "any"
     },
     {
@@ -3724,8 +3724,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_llmintentrecognizer_recognize",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".recognize()"
     },
     {
@@ -3735,8 +3735,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_rationale_1",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "\u57fa\u4e8e llm \u7ed3\u6784\u5316\u8f93\u51fa\u7684\u610f\u56fe\u8bc6\u522b\u5668 \u2014\u2014 \u5b9e\u73b0 intentrecognizer \u7aef\u53e3\u3002  \u5355\u6b21 with_structured_output \u8c03\u7528,\u4e0d\u662f r"
     },
     {
@@ -3746,8 +3746,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_rationale_19",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "\u62fc\u88c5\u5206\u7c7b prompt:\u5217\u6280\u80fd\u76ee\u5f55 + \u8981\u6c42\u62e9\u4e00 + \u5141\u8bb8 none\u3002"
     },
     {
@@ -3757,8 +3757,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_infrastructure_ai_llm_intent_recognizer_rationale_32",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "\u5b9e\u73b0 intentrecognizer \u7aef\u53e3\u3002"
     },
     {
@@ -4351,8 +4351,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_client_nacos",
-      "community": 14,
-      "community_name": "Nacos Client Infrastructure",
+      "community": 22,
+      "community_name": "Nacos Repository Implementation Tests",
       "norm_label": "nacos.py"
     },
     {
@@ -4703,8 +4703,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_infrastructure_config_llm_config_llmconfig",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "llmconfig"
     },
     {
@@ -4714,8 +4714,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_infrastructure_config_llm_config_py_basemodel",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "basemodel"
     },
     {
@@ -4747,8 +4747,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "event_publisher.py"
     },
     {
@@ -4758,8 +4758,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher_inmemoryeventpublisher",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "inmemoryeventpublisher"
     },
     {
@@ -4769,8 +4769,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher_inmemoryeventpublisher_init",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".__init__()"
     },
     {
@@ -4780,8 +4780,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher_inmemoryeventpublisher_subscribe",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".subscribe()"
     },
     {
@@ -4791,8 +4791,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher_inmemoryeventpublisher_publish",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".publish()"
     },
     {
@@ -4802,8 +4802,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher_rationale_1",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "\u8fdb\u7a0b\u5185\u9886\u57df\u4e8b\u4ef6\u53d1\u5e03\u5668 \u2014\u2014 \u5b9e\u73b0 domaineventpublisher \u7aef\u53e3(mvp)\u3002"
     },
     {
@@ -4813,8 +4813,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_infrastructure_conversation_event_publisher_rationale_14",
-      "community": 50,
-      "community_name": "Nacos LLM Config Repository",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "\u6309\u4e8b\u4ef6\u7c7b\u578b\u5206\u53d1\u7ed9\u8ba2\u9605\u8005;handler \u53ef\u540c\u6b65\u6216\u5f02\u6b65\u3002"
     },
     {
@@ -5385,8 +5385,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "nacos_llm_config_repository.py"
     },
     {
@@ -5396,8 +5396,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_nacosllmconfigrepository",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "nacosllmconfigrepository"
     },
     {
@@ -5407,8 +5407,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_nacosllmconfigrepository_init",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": ".__init__()"
     },
     {
@@ -5418,8 +5418,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_nacosllmconfigrepository_load",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".load()"
     },
     {
@@ -5429,8 +5429,8 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_nacosllmconfigrepository_get",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".get()"
     },
     {
@@ -5440,8 +5440,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_nacosllmconfigrepository_on_config_changed",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "._on_config_changed()"
     },
     {
@@ -5451,8 +5451,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_rationale_13",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "llm \u914d\u7f6e\u7684 nacos \u9002\u914d\u5668\u3002      \u4ece nacos \u8bfb\u53d6 json \u683c\u5f0f\u7684 llmconfig,\u7f13\u5b58 + \u70ed\u66f4\u65b0\u3002"
     },
     {
@@ -5462,8 +5462,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_rationale_29",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "\u4ece nacos \u62c9\u53d6\u5e76\u6ce8\u518c watcher(\u5e42\u7b49,\u5e76\u53d1\u5b89\u5168)\u3002"
     },
     {
@@ -5473,8 +5473,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_llm_config_repository_rationale_56",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "\u540c\u6b65\u83b7\u53d6\u7f13\u5b58\u7684 llmconfig\u3002          raises:             runtimeerror: \u5c1a\u672a\u8c03\u7528 load()\u3002"
     },
     {
@@ -5506,8 +5506,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_infrastructure_ports_nacos_skill_config_repository_nacosskillconfigrepository_init",
-      "community": 14,
-      "community_name": "Nacos Client Infrastructure",
+      "community": 2,
+      "community_name": "Agent Entity, DTO & Service Ports",
       "norm_label": ".__init__()"
     },
     {
@@ -5693,8 +5693,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_langchainagentservice",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": "langchainagentservice"
     },
     {
@@ -5726,8 +5726,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_langchainagentservice_run",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": ".run()"
     },
     {
@@ -5737,8 +5737,8 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_langchainagentservice_stream",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": ".stream()"
     },
     {
@@ -5836,8 +5836,8 @@
       "source_location": "L157",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_map_event",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": "_map_event()"
     },
     {
@@ -5858,8 +5858,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_rationale_27",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": "\u57fa\u4e8e langchain \u7684 agentservice \u5b9e\u73b0\u3002      \u5c01\u88c5 langgraph \u7f16\u8bd1\u540e\u7684 agent,\u5b9e\u73b0 run \u4e0e stream \u4e24\u79cd\u8c03"
     },
     {
@@ -5869,8 +5869,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_rationale_69",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": "\u6d41\u5f0f\u8c03\u7528 agent,\u9010\u4e8b\u4ef6\u63a8\u9001(\u9002\u7528 sse)\u3002"
     },
     {
@@ -5902,8 +5902,8 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "src_interfaces_ai_react_agent_rationale_158",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 3,
+      "community_name": "HTTP SSE Streaming & Agent Router",
       "norm_label": "\u5c06 langchain astream_events \u4e8b\u4ef6\u6620\u5c04\u4e3a agentstreamevent\u3002"
     },
     {
@@ -6078,8 +6078,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_interfaces_api_routes_agent_config",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agent_config.py"
     },
     {
@@ -6089,8 +6089,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_interfaces_api_routes_agent_config_agent_identity",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agent_identity()"
     },
     {
@@ -6100,8 +6100,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_interfaces_api_routes_agent_config_agent_skills",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agent_skills()"
     },
     {
@@ -6111,8 +6111,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_interfaces_api_routes_agent_config_rationale_1",
-      "community": 91,
-      "community_name": "AgentIdentityRepository",
+      "community": 15,
+      "community_name": "SSE Encoder & HTTP Schemas",
       "norm_label": "agent \u914d\u7f6e\u53ea\u8bfb\u8def\u7531\u2014\u2014\u8eab\u4efd\u5b9a\u4e49\u4e0e\u6280\u80fd\u5217\u8868\u3002"
     },
     {
@@ -6496,8 +6496,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_support",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "support.py"
     },
     {
@@ -6507,8 +6507,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_support_stubagentservice",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "stubagentservice"
     },
     {
@@ -6518,8 +6518,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "tests_support_stubagentservice_run",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".run()"
     },
     {
@@ -6529,8 +6529,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_support_stubagentservice_stream",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": ".stream()"
     },
     {
@@ -6540,8 +6540,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "tests_support_loadedidentityrepo",
-      "community": 7,
-      "community_name": "Nacos Config Repository Ports",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "loadedidentityrepo"
     },
     {
@@ -6551,8 +6551,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_support_loadedidentityrepo_init",
-      "community": 7,
-      "community_name": "Nacos Config Repository Ports",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": ".__init__()"
     },
     {
@@ -6562,8 +6562,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "tests_support_loadedskillrepo",
-      "community": 2,
-      "community_name": "Agent Entity, DTO & Service Ports",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "loadedskillrepo"
     },
     {
@@ -6573,8 +6573,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_support_loadedskillrepo_init",
-      "community": 2,
-      "community_name": "Agent Entity, DTO & Service Ports",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": ".__init__()"
     },
     {
@@ -6606,8 +6606,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_support_rationale_1",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "\u6d4b\u8bd5\u5171\u4eab\u6869:\u6784\u9020\u96f6 io \u7684 container\u3002  container \u5b57\u6bb5\u7c7b\u578b\u662f\u5177\u4f53\u57fa\u7840\u8bbe\u65bd\u7c7b(pydantic isinstance \u6821\u9a8c),\u56e0\u6b64\u6869\u5fc5\u987b\u662f"
     },
     {
@@ -6617,8 +6617,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_support_rationale_29",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "\u7ed3\u6784\u6027\u5b9e\u73b0 agentservice \u7aef\u53e3\u7684\u6869\u3002"
     },
     {
@@ -6628,8 +6628,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_support_rationale_39",
-      "community": 7,
-      "community_name": "Nacos Config Repository Ports",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "\u9884\u7f6e\u7f13\u5b58\u7684 agentidentity \u4ed3\u5e93\u6869(\u4e0d\u8fde nacos)\u3002"
     },
     {
@@ -6639,8 +6639,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "tests_support_rationale_48",
-      "community": 2,
-      "community_name": "Agent Entity, DTO & Service Ports",
+      "community": 23,
+      "community_name": "Bootstrap App Factory Tests",
       "norm_label": "\u9884\u7f6e\u7f13\u5b58\u7684 skillconfig \u4ed3\u5e93\u6869(\u4e0d\u8fde nacos)\u3002"
     },
     {
@@ -6661,8 +6661,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_agent_create",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "test_agent_create.py"
     },
     {
@@ -6672,8 +6672,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_test_agent_create_testcreateagent",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "testcreateagent"
     },
     {
@@ -6683,8 +6683,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_test_agent_create_testcreateagent_setup",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".setup()"
     },
     {
@@ -6694,8 +6694,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_agent_create_testcreateagent_test_agent_create",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".test_agent_create()"
     },
     {
@@ -6716,8 +6716,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentrequesttest",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "agentrequesttest"
     },
     {
@@ -6727,8 +6727,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentrequesttest_test_default_values",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".test_default_values()"
     },
     {
@@ -6738,8 +6738,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentrequesttest_test_with_messages",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".test_with_messages()"
     },
     {
@@ -6749,8 +6749,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentrequesttest_test_serialization_roundtrip",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".test_serialization_roundtrip()"
     },
     {
@@ -6760,8 +6760,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentrequesttest_test_json_deserialization",
-      "community": 32,
-      "community_name": "Agent Service Port Tests",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".test_json_deserialization()"
     },
     {
@@ -6804,8 +6804,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentstreameventtest",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "agentstreameventtest"
     },
     {
@@ -6815,8 +6815,8 @@
       "source_location": "L74",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentstreameventtest_test_token_event",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": ".test_token_event()"
     },
     {
@@ -6826,8 +6826,8 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentstreameventtest_test_tool_start_event",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": ".test_tool_start_event()"
     },
     {
@@ -6837,8 +6837,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "tests_test_agent_dto_agentstreameventtest_test_error_event",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": ".test_error_event()"
     },
     {
@@ -6870,8 +6870,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "tests_test_agent_dto_rationale_72",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "agentstreamevent dto \u6d4b\u8bd5\u3002"
     },
     {
@@ -6881,8 +6881,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_agent_dto_routing",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "test_agent_dto_routing.py"
     },
     {
@@ -6892,8 +6892,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "tests_test_agent_dto_routing_routingeventtest",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "routingeventtest"
     },
     {
@@ -6903,8 +6903,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_test_agent_dto_routing_routingeventtest_test_routing_event_type_and_skill_name",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": ".test_routing_event_type_and_skill_name()"
     },
     {
@@ -6914,8 +6914,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_agent_dto_routing_routingeventtest_test_routing_event_json_contains_skill_name",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": ".test_routing_event_json_contains_skill_name()"
     },
     {
@@ -6925,8 +6925,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_test_agent_dto_routing_routingeventtest_test_token_event_skill_name_defaults_none",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": ".test_token_event_skill_name_defaults_none()"
     },
     {
@@ -6969,8 +6969,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_agent_dto_routing_rationale_1",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 16,
+      "community_name": "Agent Service Test Support",
       "norm_label": "agent dto \u8def\u7531\u6269\u5c55\u6d4b\u8bd5\u2014\u2014routing \u4e8b\u4ef6\u4e0e routed_skill \u5b57\u6bb5\u3002"
     },
     {
@@ -7156,8 +7156,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_agent_router_chatstub",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "_chatstub"
     },
     {
@@ -7167,8 +7167,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_agent_router_chatstub_run",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".run()"
     },
     {
@@ -7178,8 +7178,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_agent_router_chatstub_stream",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".stream()"
     },
     {
@@ -7189,8 +7189,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_test_agent_router_agentroutertest",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "agentroutertest"
     },
     {
@@ -7200,8 +7200,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "tests_test_agent_router_agentroutertest_setup",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".setup()"
     },
     {
@@ -7211,8 +7211,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_test_agent_router_agentroutertest_teardown",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".teardown()"
     },
     {
@@ -7222,8 +7222,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "tests_test_agent_router_agentroutertest_test_chat_non_stream",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_chat_non_stream()"
     },
     {
@@ -7233,8 +7233,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "tests_test_agent_router_agentroutertest_test_chat_stream_content_type_and_frames",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_chat_stream_content_type_and_frames()"
     },
     {
@@ -7255,8 +7255,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_agent_router_rationale_18",
-      "community": 44,
-      "community_name": "Agent Router Tool Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "\u5047 agentservice:stream \u4ea7\u51fa\u56fa\u5b9a\u4e8b\u4ef6\u5e8f\u5217,run \u8fd4\u56de\u56fa\u5b9a\u54cd\u5e94\u3002"
     },
     {
@@ -7607,8 +7607,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_agent_service_port",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "test_agent_service_port.py"
     },
     {
@@ -7618,8 +7618,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_stubagentservice",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "_stubagentservice"
     },
     {
@@ -7629,8 +7629,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_stubagentservice_run",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".run()"
     },
     {
@@ -7640,8 +7640,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_stubagentservice_stream",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".stream()"
     },
     {
@@ -7651,8 +7651,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_agentserviceporttest",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "agentserviceporttest"
     },
     {
@@ -7662,8 +7662,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_agentserviceporttest_test_isinstance_accepts_structural_implementation",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": ".test_isinstance_accepts_structural_implementation()"
     },
     {
@@ -7684,8 +7684,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_rationale_1",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "agentservice \u7aef\u53e3\u7684 runtime_checkable \u6821\u9a8c\u6d4b\u8bd5\u3002"
     },
     {
@@ -7695,8 +7695,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_agent_service_port_rationale_18",
-      "community": 5,
-      "community_name": "Agent Config API Routes",
+      "community": 19,
+      "community_name": "Bootstrap Container Tests",
       "norm_label": "runtime_checkable \u540e,\u7ed3\u6784\u6027\u5b9e\u73b0\u5e94\u901a\u8fc7 isinstance \u68c0\u67e5\u3002"
     },
     {
@@ -7805,8 +7805,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_container",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "test_container.py"
     },
     {
@@ -7816,8 +7816,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_test_container_containertest",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "containertest"
     },
     {
@@ -7827,8 +7827,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_container_containertest_test_construct_with_stubs",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_construct_with_stubs()"
     },
     {
@@ -7838,8 +7838,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_test_container_containertest_test_frozen",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_frozen()"
     },
     {
@@ -7849,8 +7849,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_test_container_containertest_test_rejects_non_agent_service",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_rejects_non_agent_service()"
     },
     {
@@ -7860,8 +7860,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_test_container_containertest_test_shutdown_closes_exit_stack",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_shutdown_closes_exit_stack()"
     },
     {
@@ -7871,8 +7871,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_container_rationale_1",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "container \u6784\u9020\u3001\u4e0d\u53ef\u53d8\u6027\u4e0e\u5173\u95ed\u8bed\u4e49\u6d4b\u8bd5\u2014\u2014\u5168\u90e8\u96f6 io \u6869,\u4e0d\u89e6\u7f51\u7edc/\u6570\u636e\u5e93\u3002"
     },
     {
@@ -7882,8 +7882,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_container_rationale_14",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "\u96f6 io \u6869\u53ef\u6784\u9020\u51fa\u5408\u6cd5 container\u3002"
     },
     {
@@ -7893,8 +7893,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_container_rationale_20",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "frozen=true:\u6784\u9020\u540e\u5b57\u6bb5\u4e0d\u53ef\u8d4b\u503c\u3002"
     },
     {
@@ -7904,8 +7904,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_test_container_rationale_26",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "agent_service \u5b57\u6bb5\u62d2\u7edd\u672a\u5b9e\u73b0\u7aef\u53e3\u7684\u5bf9\u8c61\u3002"
     },
     {
@@ -7915,8 +7915,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "tests_test_container_rationale_34",
-      "community": 23,
-      "community_name": "Bootstrap App Factory Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "shutdown() \u89e6\u53d1 exit_stack \u4e2d\u6ce8\u518c\u7684\u5173\u95ed\u56de\u8c03\u3002"
     },
     {
@@ -7926,8 +7926,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_context_window",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "test_context_window.py"
     },
     {
@@ -7937,8 +7937,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "tests_test_context_window_msgs",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "_msgs()"
     },
     {
@@ -7948,8 +7948,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_context_window_contextwindowpolicytest",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "contextwindowpolicytest"
     },
     {
@@ -7959,8 +7959,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_test_context_window_contextwindowpolicytest_test_selects_last_n",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": ".test_selects_last_n()"
     },
     {
@@ -7970,8 +7970,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "tests_test_context_window_contextwindowpolicytest_test_fewer_than_size_returns_all",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": ".test_fewer_than_size_returns_all()"
     },
     {
@@ -7981,8 +7981,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_test_context_window_contextwindowpolicytest_test_non_positive_size_returns_all",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": ".test_non_positive_size_returns_all()"
     },
     {
@@ -7992,8 +7992,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_context_window_rationale_1",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 6,
+      "community_name": "Conversation REST Router & Schemas",
       "norm_label": "contextwindowpolicy \u6d4b\u8bd5\u2014\u2014\u6700\u8fd1 n \u6761\u88c1\u526a\u3002"
     },
     {
@@ -8256,8 +8256,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_conversation_commands_commandstest_test_repository_is_abstract",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 93,
+      "community_name": "ConversationRepository",
       "norm_label": ".test_repository_is_abstract()"
     },
     {
@@ -8278,8 +8278,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_test_conversation_events_conversationeventstest",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": "conversationeventstest"
     },
     {
@@ -8289,8 +8289,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_conversation_events_conversationeventstest_test_started",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": ".test_started()"
     },
     {
@@ -8300,8 +8300,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "tests_test_conversation_events_conversationeventstest_test_assistant_responded_default_tool_calls",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": ".test_assistant_responded_default_tool_calls()"
     },
     {
@@ -8311,8 +8311,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_test_conversation_events_conversationeventstest_test_closed",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 27,
+      "community_name": "Routing Policy Tests",
       "norm_label": ".test_closed()"
     },
     {
@@ -8454,8 +8454,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_conversation_router",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "test_conversation_router.py"
     },
     {
@@ -8487,8 +8487,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_conversation_router_conversationroutertest",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "conversationroutertest"
     },
     {
@@ -8498,8 +8498,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_test_conversation_router_conversationroutertest_setup",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".setup()"
     },
     {
@@ -8509,8 +8509,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_test_conversation_router_conversationroutertest_teardown",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".teardown()"
     },
     {
@@ -8520,8 +8520,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "tests_test_conversation_router_conversationroutertest_test_send_message",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_send_message()"
     },
     {
@@ -8531,8 +8531,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "tests_test_conversation_router_conversationroutertest_test_malformed_conversation_id_rejected_422",
-      "community": 19,
-      "community_name": "Bootstrap Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": ".test_malformed_conversation_id_rejected_422()"
     },
     {
@@ -8542,8 +8542,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_conversation_router_rationale_1",
-      "community": 41,
-      "community_name": "Bootstrap DI & Container Tests",
+      "community": 33,
+      "community_name": "Test Support Fixtures",
       "norm_label": "\u5bf9\u8bdd\u8def\u7531\u96c6\u6210\u2014\u2014\u6ce8\u5165 stub \u7528\u4f8b,\u9a8c\u8bc1 /conversations/messages\u3002"
     },
     {
@@ -8564,8 +8564,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "valueobjectstest"
     },
     {
@@ -8575,8 +8575,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest_test_conversation_id_new_is_valid_and_increasing",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 88,
+      "community_name": "uuid7",
       "norm_label": ".test_conversation_id_new_is_valid_and_increasing()"
     },
     {
@@ -8586,8 +8586,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest_test_conversation_id_rejects_invalid",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".test_conversation_id_rejects_invalid()"
     },
     {
@@ -8597,8 +8597,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest_test_conversation_id_accepts_legacy_hex",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".test_conversation_id_accepts_legacy_hex()"
     },
     {
@@ -8608,8 +8608,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest_test_roles",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".test_roles()"
     },
     {
@@ -8619,8 +8619,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest_test_message_frozen",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".test_message_frozen()"
     },
     {
@@ -8630,8 +8630,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_test_conversation_value_objects_valueobjectstest_test_message_with_tool_calls",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".test_message_with_tool_calls()"
     },
     {
@@ -8663,8 +8663,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "tests_test_domain_event_domaineventtest",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": "domaineventtest"
     },
     {
@@ -8674,8 +8674,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_domain_event_domaineventtest_test_has_occurred_at",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".test_has_occurred_at()"
     },
     {
@@ -8685,8 +8685,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_domain_event_domaineventtest_test_frozen",
-      "community": 17,
-      "community_name": "Skill Lookup & Tool Registry",
+      "community": 34,
+      "community_name": "Domain Event Tests",
       "norm_label": ".test_frozen()"
     },
     {
@@ -9070,8 +9070,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "tests_test_intent_value_objects_routingconfigtest",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": "routingconfigtest"
     },
     {
@@ -9081,8 +9081,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "tests_test_intent_value_objects_routingconfigtest_test_defaults",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": ".test_defaults()"
     },
     {
@@ -9092,8 +9092,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "tests_test_intent_value_objects_routingconfigtest_test_threshold_bounds",
-      "community": 52,
-      "community_name": "LLM Client Factory Tests",
+      "community": 0,
+      "community_name": "Intent Routing & Agent Registry",
       "norm_label": ".test_threshold_bounds()"
     },
     {
@@ -9125,8 +9125,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_interfaces_api_stubidentityrepo",
-      "community": 89,
-      "community_name": "InterfacesApiTest",
+      "community": 7,
+      "community_name": "Nacos Config Repository Ports",
       "norm_label": "_stubidentityrepo"
     },
     {
@@ -9136,8 +9136,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_interfaces_api_stubidentityrepo_get",
-      "community": 89,
-      "community_name": "InterfacesApiTest",
+      "community": 7,
+      "community_name": "Nacos Config Repository Ports",
       "norm_label": ".get()"
     },
     {
@@ -9257,8 +9257,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_client_factory",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "test_llm_client_factory.py"
     },
     {
@@ -9268,8 +9268,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "tests_test_llm_client_factory_testllmclientfactory",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "testllmclientfactory"
     },
     {
@@ -9279,8 +9279,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_test_llm_client_factory_testllmclientfactory_test_create_llm",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".test_create_llm()"
     },
     {
@@ -9290,8 +9290,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_client_factory_rationale_1",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "llm \u5ba2\u6237\u7aef\u5de5\u5382\u6d4b\u8bd5\u2014\u2014\u9a8c\u8bc1 llmclientfactory \u7684\u521b\u5efa\u903b\u8f91\u3002"
     },
     {
@@ -9301,8 +9301,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "tests_test_llm_client_factory_rationale_14",
-      "community": 29,
-      "community_name": "Skill Agent Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "llmclientfactory \u5355\u5143\u6d4b\u8bd5\u3002"
     },
     {
@@ -9312,8 +9312,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_config",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "test_llm_config.py"
     },
     {
@@ -9323,8 +9323,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "tests_test_llm_config_llmconfigrequesttest",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": "llmconfigrequesttest"
     },
     {
@@ -9334,8 +9334,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "tests_test_llm_config_llmconfigrequesttest_test_llm_config",
-      "community": 24,
-      "community_name": "Agent Factory & Builder Tests",
+      "community": 26,
+      "community_name": "Tool Adapter Tests",
       "norm_label": ".test_llm_config()"
     },
     {
@@ -9345,8 +9345,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "test_llm_intent_recognizer.py"
     },
     {
@@ -9356,8 +9356,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_fakestructured",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "_fakestructured"
     },
     {
@@ -9367,8 +9367,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_fakestructured_init",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".__init__()"
     },
     {
@@ -9378,8 +9378,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_fakestructured_ainvoke",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".ainvoke()"
     },
     {
@@ -9389,8 +9389,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_fakellm",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "_fakellm"
     },
     {
@@ -9400,8 +9400,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_fakellm_init",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".__init__()"
     },
     {
@@ -9411,8 +9411,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_fakellm_with_structured_output",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".with_structured_output()"
     },
     {
@@ -9422,8 +9422,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_skills",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "_skills()"
     },
     {
@@ -9433,8 +9433,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_buildprompttest",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "buildprompttest"
     },
     {
@@ -9444,8 +9444,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_buildprompttest_test_prompt_contains_each_skill",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".test_prompt_contains_each_skill()"
     },
     {
@@ -9455,8 +9455,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_recognizetest",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "recognizetest"
     },
     {
@@ -9466,8 +9466,8 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_recognizetest_test_recognize_returns_structured_result",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": ".test_recognize_returns_structured_result()"
     },
     {
@@ -9477,8 +9477,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_llm_intent_recognizer_rationale_1",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 17,
+      "community_name": "Skill Lookup & Tool Registry",
       "norm_label": "llmintentrecognizer \u6d4b\u8bd5\u2014\u2014prompt \u62fc\u88c5 + \u7ed3\u6784\u5316\u8f93\u51fa\u89e3\u6790(\u5047 llm)\u3002"
     },
     {
@@ -9576,8 +9576,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosclientnoserver",
-      "community": 56,
-      "community_name": "Nacos Client No-Server Tests",
+      "community": 22,
+      "community_name": "Nacos Repository Implementation Tests",
       "norm_label": "testnacosclientnoserver"
     },
     {
@@ -9587,8 +9587,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosclientnoserver_setup",
-      "community": 56,
-      "community_name": "Nacos Client No-Server Tests",
+      "community": 22,
+      "community_name": "Nacos Repository Implementation Tests",
       "norm_label": ".setup()"
     },
     {
@@ -9598,8 +9598,8 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosclientnoserver_test_client_creation_has_no_service",
-      "community": 56,
-      "community_name": "Nacos Client No-Server Tests",
+      "community": 22,
+      "community_name": "Nacos Repository Implementation Tests",
       "norm_label": ".test_client_creation_has_no_service()"
     },
     {
@@ -9609,8 +9609,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosclientnoserver_test_ensure_started_raises_before_start",
-      "community": 56,
-      "community_name": "Nacos Client No-Server Tests",
+      "community": 22,
+      "community_name": "Nacos Repository Implementation Tests",
       "norm_label": ".test_ensure_started_raises_before_start()"
     },
     {
@@ -9620,8 +9620,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosclientnoserver_test_stop_when_not_started_is_noop",
-      "community": 56,
-      "community_name": "Nacos Client No-Server Tests",
+      "community": 22,
+      "community_name": "Nacos Repository Implementation Tests",
       "norm_label": ".test_stop_when_not_started_is_noop()"
     },
     {
@@ -9774,8 +9774,8 @@
       "source_location": "L227",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosskillconfigrepository",
-      "community": 99,
-      "community_name": "TestNacosSkillConfigRepository",
+      "community": 21,
+      "community_name": "Routing Integration Tests",
       "norm_label": "testnacosskillconfigrepository"
     },
     {
@@ -9785,8 +9785,8 @@
       "source_location": "L231",
       "_origin": "ast",
       "id": "tests_test_nacos_client_testnacosskillconfigrepository_test_load_and_get",
-      "community": 99,
-      "community_name": "TestNacosSkillConfigRepository",
+      "community": 21,
+      "community_name": "Routing Integration Tests",
       "norm_label": ".test_load_and_get()"
     },
     {
@@ -9840,8 +9840,8 @@
       "source_location": "L228",
       "_origin": "ast",
       "id": "tests_test_nacos_client_rationale_228",
-      "community": 99,
-      "community_name": "TestNacosSkillConfigRepository",
+      "community": 21,
+      "community_name": "Routing Integration Tests",
       "norm_label": "nacosskillconfigrepository \u96c6\u6210\u6d4b\u8bd5\u3002"
     },
     {
@@ -9895,8 +9895,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "tests_test_routing_agent_service_stubworker_stream",
-      "community": 6,
-      "community_name": "Conversation REST Router & Schemas",
+      "community": 52,
+      "community_name": "LLM Client Factory Tests",
       "norm_label": ".stream()"
     },
     {
@@ -10104,8 +10104,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "tests_test_routing_integration_stubrecognizer_recognize",
-      "community": 0,
-      "community_name": "Intent Routing & Agent Registry",
+      "community": 58,
+      "community_name": "Nacos Client Lifecycle Tests",
       "norm_label": ".recognize()"
     },
     {
@@ -10313,8 +10313,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "tests_test_send_message_use_case_fakerepo",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": "_fakerepo"
     },
     {
@@ -10324,8 +10324,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_send_message_use_case_fakerepo_init",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".__init__()"
     },
     {
@@ -10335,8 +10335,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "tests_test_send_message_use_case_fakerepo_get",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".get()"
     },
     {
@@ -10346,8 +10346,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "tests_test_send_message_use_case_fakerepo_save",
-      "community": 1,
-      "community_name": "Conversation Use Case & Persistence",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".save()"
     },
     {
@@ -10357,8 +10357,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "tests_test_send_message_use_case_fakerepo_load_full",
-      "community": 31,
-      "community_name": "Agent Identity Value Object Tests",
+      "community": 9,
+      "community_name": "Conversation Value Objects",
       "norm_label": ".load_full()"
     },
     {
@@ -10797,8 +10797,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "tests_test_tool_adapter_tooladaptertest_test_adapt_tool_exception",
-      "community": 37,
-      "community_name": "Nacos Client Infrastructure Tests",
+      "community": 8,
+      "community_name": "Conversation Aggregate & Domain Events",
       "norm_label": ".test_adapt_tool_exception()"
     },
     {
@@ -10885,8 +10885,8 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "tests_test_tool_adapter_rationale_91",
-      "community": 37,
-      "community_name": "Nacos Client Infrastructure Tests",
+      "community": 8,
+      "community_name": "Conversation Aggregate & Domain Events",
       "norm_label": "\u5de5\u5177\u629b\u51fa\u5f02\u5e38\u65f6,\u9002\u914d\u5668\u6355\u83b7\u5e76\u8fd4\u56de\u5f02\u5e38\u6587\u672c\u3002"
     },
     {
@@ -11143,6 +11143,413 @@
       "norm_label": "\u5f71\u54cd\u9762\u6e05\u5355"
     },
     {
+      "label": "2026-07-20-langgraph-memory-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "2026-07-20-langgraph-memory-design.md"
+    },
+    {
+      "label": "LangGraph \u8bb0\u5fc6\u63a5\u7ba1:checkpointer \u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "langgraph \u8bb0\u5fc6\u63a5\u7ba1:checkpointer \u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1"
+    },
+    {
+      "label": "1. \u80cc\u666f\u4e0e\u76ee\u6807",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_1_\u80cc\u666f\u4e0e\u76ee\u6807",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "1. \u80cc\u666f\u4e0e\u76ee\u6807"
+    },
+    {
+      "label": "2. \u5173\u952e\u51b3\u7b56(\u5df2\u4e0e\u7528\u6237\u786e\u8ba4)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_2_\u5173\u952e\u51b3\u7b56_\u5df2\u4e0e\u7528\u6237\u786e\u8ba4",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "2. \u5173\u952e\u51b3\u7b56(\u5df2\u4e0e\u7528\u6237\u786e\u8ba4)"
+    },
+    {
+      "label": "\u4e0e 7-19 \u8bbe\u8ba1\u7684\u51b3\u7b56\u5dee\u5f02(\u8bb0\u5f55\u5728\u6848)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_\u4e0e_7_19_\u8bbe\u8ba1\u7684\u51b3\u7b56\u5dee\u5f02_\u8bb0\u5f55\u5728\u6848",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u4e0e 7-19 \u8bbe\u8ba1\u7684\u51b3\u7b56\u5dee\u5f02(\u8bb0\u5f55\u5728\u6848)"
+    },
+    {
+      "label": "3. \u8303\u56f4",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_3_\u8303\u56f4",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "3. \u8303\u56f4"
+    },
+    {
+      "label": "4. \u67b6\u6784\u603b\u89c8",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_4_\u67b6\u6784\u603b\u89c8",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "4. \u67b6\u6784\u603b\u89c8"
+    },
+    {
+      "label": "\u7ec4\u4ef6\u53bb\u7559",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_\u7ec4\u4ef6\u53bb\u7559",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u7ec4\u4ef6\u53bb\u7559"
+    },
+    {
+      "label": "5. \u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L95",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_\u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "5. \u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6"
+    },
+    {
+      "label": "5.1 \u72b6\u6001(\u968f checkpoint \u6301\u4e45\u5316)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_1_\u72b6\u6001_\u968f_checkpoint_\u6301\u4e45\u5316",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "5.1 \u72b6\u6001(\u968f checkpoint \u6301\u4e45\u5316)"
+    },
+    {
+      "label": "5.2 RoutingMiddleware(\u81ea\u7814)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_2_routingmiddleware_\u81ea\u7814",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "5.2 routingmiddleware(\u81ea\u7814)"
+    },
+    {
+      "label": "5.3 \u4e0a\u4e0b\u6587\u5de5\u7a0b\u6269\u5c55\u70b9(\u538b\u7f29/\u89c4\u5212)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_3_\u4e0a\u4e0b\u6587\u5de5\u7a0b\u6269\u5c55\u70b9_\u538b\u7f29_\u89c4\u5212",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "5.3 \u4e0a\u4e0b\u6587\u5de5\u7a0b\u6269\u5c55\u70b9(\u538b\u7f29/\u89c4\u5212)"
+    },
+    {
+      "label": "6. \u7528\u4f8b\u4e0e\u4e00\u81f4\u6027",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_\u7528\u4f8b\u4e0e\u4e00\u81f4\u6027",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "6. \u7528\u4f8b\u4e0e\u4e00\u81f4\u6027"
+    },
+    {
+      "label": "6.1 SendMessageUseCase(\u7b80\u5316\u540e)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L135",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_1_sendmessageusecase_\u7b80\u5316\u540e",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "6.1 sendmessageusecase(\u7b80\u5316\u540e)"
+    },
+    {
+      "label": "6.2 \u4e00\u81f4\u6027\u6a21\u578b",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L160",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_2_\u4e00\u81f4\u6027\u6a21\u578b",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "6.2 \u4e00\u81f4\u6027\u6a21\u578b"
+    },
+    {
+      "label": "7. \u63a5\u53e3\u5c42\u884c\u4e3a",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L166",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_7_\u63a5\u53e3\u5c42\u884c\u4e3a",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "7. \u63a5\u53e3\u5c42\u884c\u4e3a"
+    },
+    {
+      "label": "8. \u57fa\u7840\u8bbe\u65bd\u4e0e\u88c5\u914d",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_8_\u57fa\u7840\u8bbe\u65bd\u4e0e\u88c5\u914d",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "8. \u57fa\u7840\u8bbe\u65bd\u4e0e\u88c5\u914d"
+    },
+    {
+      "label": "9. \u9519\u8bef\u5904\u7406",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L180",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_9_\u9519\u8bef\u5904\u7406",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "9. \u9519\u8bef\u5904\u7406"
+    },
+    {
+      "label": "10. \u6d4b\u8bd5\u7b56\u7565(unittest,\u4e0d\u4f9d\u8d56\u771f Postgres)",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L189",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_10_\u6d4b\u8bd5\u7b56\u7565_unittest_\u4e0d\u4f9d\u8d56\u771f_postgres",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "10. \u6d4b\u8bd5\u7b56\u7565(unittest,\u4e0d\u4f9d\u8d56\u771f postgres)"
+    },
+    {
+      "label": "11. \u975e\u76ee\u6807(YAGNI)\u4e0e\u6f14\u8fdb\u9884\u7559",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_11_\u975e\u76ee\u6807_yagni_\u4e0e\u6f14\u8fdb\u9884\u7559",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "11. \u975e\u76ee\u6807(yagni)\u4e0e\u6f14\u8fdb\u9884\u7559"
+    },
+    {
+      "label": "2026-07-20-trace-observability-model-design.md",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "2026-07-20-trace-observability-model-design.md"
+    },
+    {
+      "label": "Agent \u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027\uff1aTrace / Span / Event \u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "agent \u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027:trace / span / event \u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1"
+    },
+    {
+      "label": "\u80cc\u666f\u4e0e\u76ee\u6807",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u80cc\u666f\u4e0e\u76ee\u6807",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u80cc\u666f\u4e0e\u76ee\u6807"
+    },
+    {
+      "label": "\u5df2\u5b9a\u51b3\u7b56\uff08\u542b\u7406\u7531\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u5df2\u5b9a\u51b3\u7b56_\u542b\u7406\u7531",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u5df2\u5b9a\u51b3\u7b56(\u542b\u7406\u7531)"
+    },
+    {
+      "label": "\u5b50\u57df\u5b9a\u4f4d",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u5b50\u57df\u5b9a\u4f4d",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u5b50\u57df\u5b9a\u4f4d"
+    },
+    {
+      "label": "\u6838\u5fc3\u6a21\u578b",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u6838\u5fc3\u6a21\u578b",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u6838\u5fc3\u6a21\u578b"
+    },
+    {
+      "label": "Trace\uff08\u805a\u5408\u6839\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_trace_\u805a\u5408\u6839",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "trace(\u805a\u5408\u6839)"
+    },
+    {
+      "label": "Span\uff08\u5185\u90e8\u5b9e\u4f53\uff0c\u4e0d\u53ef\u5355\u72ec\u5f15\u7528\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_span_\u5185\u90e8\u5b9e\u4f53_\u4e0d\u53ef\u5355\u72ec\u5f15\u7528",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "span(\u5185\u90e8\u5b9e\u4f53,\u4e0d\u53ef\u5355\u72ec\u5f15\u7528)"
+    },
+    {
+      "label": "TraceEvent\uff08frozen \u503c\u5bf9\u8c61\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_traceevent_frozen_\u503c\u5bf9\u8c61",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "traceevent(frozen \u503c\u5bf9\u8c61)"
+    },
+    {
+      "label": "ID \u503c\u5bf9\u8c61",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L108",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_id_\u503c\u5bf9\u8c61",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "id \u503c\u5bf9\u8c61"
+    },
+    {
+      "label": "\u751f\u547d\u5468\u671f\u4e0e\u4e0d\u53d8\u91cf",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L112",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u751f\u547d\u5468\u671f\u4e0e\u4e0d\u53d8\u91cf",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u751f\u547d\u5468\u671f\u4e0e\u4e0d\u53d8\u91cf"
+    },
+    {
+      "label": "\u4ed3\u50a8\u63a5\u53e3\uff08domain \u5b9a\u4e49\u3001infrastructure \u5b9e\u73b0\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L124",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u4ed3\u50a8\u63a5\u53e3_domain_\u5b9a\u4e49_infrastructure_\u5b9e\u73b0",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u4ed3\u50a8\u63a5\u53e3(domain \u5b9a\u4e49\u3001infrastructure \u5b9e\u73b0)"
+    },
+    {
+      "label": "\u8868\u7ed3\u6784\uff08PostgreSQL\uff0c3 \u5f20\uff0cappend-only\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L134",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u8868\u7ed3\u6784_postgresql_3_\u5f20_append_only",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u8868\u7ed3\u6784(postgresql,3 \u5f20,append-only)"
+    },
+    {
+      "label": "\u91c7\u96c6\u6620\u5c04\uff08\u8bba\u8bc1\u6a21\u578b\u5145\u5206\u6027\uff1b\u5b9e\u65bd\u5728\u540e\u7eed\u8fed\u4ee3\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L142",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u91c7\u96c6\u6620\u5c04_\u8bba\u8bc1\u6a21\u578b\u5145\u5206\u6027_\u5b9e\u65bd\u5728\u540e\u7eed\u8fed\u4ee3",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u91c7\u96c6\u6620\u5c04(\u8bba\u8bc1\u6a21\u578b\u5145\u5206\u6027;\u5b9e\u65bd\u5728\u540e\u7eed\u8fed\u4ee3)"
+    },
+    {
+      "label": "\u56de\u653e\u89c6\u56fe\uff085.1 \u6848\u4f8b\u5f62\u6001\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L153",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u56de\u653e\u89c6\u56fe_5_1_\u6848\u4f8b\u5f62\u6001",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u56de\u653e\u89c6\u56fe(5.1 \u6848\u4f8b\u5f62\u6001)"
+    },
+    {
+      "label": "\u975e\u76ee\u6807\uff08YAGNI\uff09\u4e0e\u6f14\u8fdb\u9884\u7559",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L168",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u975e\u76ee\u6807_yagni_\u4e0e\u6f14\u8fdb\u9884\u7559",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u975e\u76ee\u6807(yagni)\u4e0e\u6f14\u8fdb\u9884\u7559"
+    },
+    {
+      "label": "\u5b9e\u65bd\u63d0\u793a\uff08\u4f9b\u540e\u7eed\u8ba1\u5212\u53c2\u8003\uff0c\u975e\u672c\u671f\u8303\u56f4\uff09",
+      "file_type": "document",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u5b9e\u65bd\u63d0\u793a_\u4f9b\u540e\u7eed\u8ba1\u5212\u53c2\u8003_\u975e\u672c\u671f\u8303\u56f4",
+      "community": 4,
+      "community_name": "Infrastructure AI Tools & Adapters",
+      "norm_label": "\u5b9e\u65bd\u63d0\u793a(\u4f9b\u540e\u7eed\u8ba1\u5212\u53c2\u8003,\u975e\u672c\u671f\u8303\u56f4)"
+    },
+    {
       "label": "AI Finance \u8d26\u7968\u670d\u52a1",
       "file_type": "document",
       "source_file": "CLAUDE.md",
@@ -11153,8 +11560,8 @@
       "contributor": null,
       "community": 49,
       "norm_label": "ai finance \u8d26\u7968\u670d\u52a1",
-      "id": "claude_md_ai_finance_project",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "claude_md_ai_finance_project"
     },
     {
       "label": "DDD \u5206\u5c42\u67b6\u6784 (\u6241\u5e73\u5e03\u5c40)",
@@ -11167,8 +11574,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "ddd \u5206\u5c42\u67b6\u6784 (\u6241\u5e73\u5e03\u5c40)",
-      "id": "claude_md_ddd_architecture",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "claude_md_ddd_architecture"
     },
     {
       "label": "\u4f9d\u8d56\u65b9\u5411\u94c1\u5f8b: interfaces\u2192application\u2192domain\u2190infrastructure",
@@ -11181,8 +11588,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "\u4f9d\u8d56\u65b9\u5411\u94c1\u5f8b: interfaces\u2192application\u2192domain\u2190infrastructure",
-      "id": "claude_md_dependency_rule",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "claude_md_dependency_rule"
     },
     {
       "label": "Pydantic v2 \u4f18\u5148, \u7981\u6b62 dataclass",
@@ -11195,8 +11602,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "pydantic v2 \u4f18\u5148, \u7981\u6b62 dataclass",
-      "id": "claude_md_pydantic_only",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "claude_md_pydantic_only"
     },
     {
       "label": "\u8d26\u7968 / billing \u9650\u754c\u4e0a\u4e0b\u6587",
@@ -11209,8 +11616,8 @@
       "contributor": null,
       "community": 49,
       "norm_label": "\u8d26\u7968 / billing \u9650\u754c\u4e0a\u4e0b\u6587",
-      "id": "claude_md_billing_context",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "claude_md_billing_context"
     },
     {
       "label": "\u6536\u7968 (receiving) \u4e1a\u52a1\u6a21\u5757",
@@ -11223,8 +11630,8 @@
       "contributor": null,
       "community": 49,
       "norm_label": "\u6536\u7968 (receiving) \u4e1a\u52a1\u6a21\u5757",
-      "id": "claude_md_receiving_module",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "claude_md_receiving_module"
     },
     {
       "label": "\u7a3d\u6838 (auditing) \u4e1a\u52a1\u6a21\u5757",
@@ -11237,8 +11644,8 @@
       "contributor": null,
       "community": 49,
       "norm_label": "\u7a3d\u6838 (auditing) \u4e1a\u52a1\u6a21\u5757",
-      "id": "claude_md_auditing_module",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "claude_md_auditing_module"
     },
     {
       "label": "Nacos \u914d\u7f6e\u4e2d\u5fc3 (standalone)",
@@ -11251,8 +11658,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "nacos \u914d\u7f6e\u4e2d\u5fc3 (standalone)",
-      "id": "docker_compose_yml_nacos_config_center",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "docker_compose_yml_nacos_config_center"
     },
     {
       "label": "PostgreSQL 16 \u6570\u636e\u5e93",
@@ -11265,8 +11672,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "postgresql 16 \u6570\u636e\u5e93",
-      "id": "docker_compose_yml_postgresql_db",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "docker_compose_yml_postgresql_db"
     },
     {
       "label": "AI Finance \u8d26\u7968\u670d\u52a1\u5bb9\u5668",
@@ -11279,8 +11686,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "ai finance \u8d26\u7968\u670d\u52a1\u5bb9\u5668",
-      "id": "docker_compose_yml_ai_finance_app",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "docker_compose_yml_ai_finance_app"
     },
     {
       "label": "Agent SSE \u6d41\u5f0f\u8f93\u51fa\u5b9e\u73b0\u8ba1\u5212",
@@ -11293,8 +11700,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "agent sse \u6d41\u5f0f\u8f93\u51fa\u5b9e\u73b0\u8ba1\u5212",
-      "id": "docs_superpowers_plans_2026_07_19_agent_sse_streaming_agent_sse_streaming_plan",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_plans_2026_07_19_agent_sse_streaming_agent_sse_streaming_plan"
     },
     {
       "label": "Bootstrap \u7ec4\u5408\u6839\u91cd\u6784\u5b9e\u65bd\u8ba1\u5212",
@@ -11307,8 +11714,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "bootstrap \u7ec4\u5408\u6839\u91cd\u6784\u5b9e\u65bd\u8ba1\u5212",
-      "id": "docs_superpowers_plans_2026_07_19_bootstrap_composition_root_bootstrap_composition_root_plan",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "docs_superpowers_plans_2026_07_19_bootstrap_composition_root_bootstrap_composition_root_plan"
     },
     {
       "label": "\u5bf9\u8bdd (Conversation) \u5b50\u57df\u5b9e\u73b0\u8ba1\u5212",
@@ -11321,8 +11728,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "\u5bf9\u8bdd (conversation) \u5b50\u57df\u5b9e\u73b0\u8ba1\u5212",
-      "id": "docs_superpowers_plans_2026_07_19_conversation_aggregate_conversation_aggregate_plan",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_plans_2026_07_19_conversation_aggregate_conversation_aggregate_plan"
     },
     {
       "label": "Agent \u52a8\u6001\u8def\u7531\u4e0e\u610f\u56fe\u8bc6\u522b\u5b9e\u73b0\u8ba1\u5212",
@@ -11335,8 +11742,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "agent \u52a8\u6001\u8def\u7531\u4e0e\u610f\u56fe\u8bc6\u522b\u5b9e\u73b0\u8ba1\u5212",
-      "id": "docs_superpowers_plans_2026_07_19_intent_routing_intent_routing_plan",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_plans_2026_07_19_intent_routing_intent_routing_plan"
     },
     {
       "label": "Agent SSE \u6d41\u5f0f\u8f93\u51fa\u8bbe\u8ba1",
@@ -11349,8 +11756,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "agent sse \u6d41\u5f0f\u8f93\u51fa\u8bbe\u8ba1",
-      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_sse_design",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_sse_design"
     },
     {
       "label": "Bootstrap \u7ec4\u5408\u6839\u91cd\u6784\u8bbe\u8ba1",
@@ -11363,8 +11770,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "bootstrap \u7ec4\u5408\u6839\u91cd\u6784\u8bbe\u8ba1",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_bootstrap_design",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_bootstrap_design"
     },
     {
       "label": "\u5bf9\u8bdd (Conversation) \u5b50\u57df\u8bbe\u8ba1",
@@ -11377,8 +11784,8 @@
       "contributor": null,
       "community": 36,
       "norm_label": "\u5bf9\u8bdd (conversation) \u5b50\u57df\u8bbe\u8ba1",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_conversation_subdomain_design",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_conversation_subdomain_design"
     },
     {
       "label": "LangChain \u5bf9\u8bdd\u6301\u4e45\u5316\u8bbe\u8ba1 (PostgreSQL)",
@@ -11391,8 +11798,8 @@
       "contributor": null,
       "community": 51,
       "norm_label": "langchain \u5bf9\u8bdd\u6301\u4e45\u5316\u8bbe\u8ba1 (postgresql)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_conversation_persistence_design",
-      "community_name": "Design Docs: Conversation Persistence"
+      "community_name": "Design Docs: Conversation Persistence",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_conversation_persistence_design"
     },
     {
       "label": "Agent \u52a8\u6001\u8def\u7531\u4e0e\u610f\u56fe\u8bc6\u522b\u8bbe\u8ba1",
@@ -11405,8 +11812,8 @@
       "contributor": null,
       "community": 39,
       "norm_label": "agent \u52a8\u6001\u8def\u7531\u4e0e\u610f\u56fe\u8bc6\u522b\u8bbe\u8ba1",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_intent_routing_design",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_intent_routing_design"
     },
     {
       "label": "\u7ec4\u5408\u6839 bootstrap (Container + build_container + create_app)",
@@ -11419,8 +11826,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "\u7ec4\u5408\u6839 bootstrap (container + build_container + create_app)",
-      "id": "claude_md_bootstrap_composition_root",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "claude_md_bootstrap_composition_root"
     },
     {
       "label": "Container (frozen Pydantic \u7ec4\u5408\u6839)",
@@ -11433,8 +11840,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "container (frozen pydantic \u7ec4\u5408\u6839)",
-      "id": "claude_md_container_pydantic",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "claude_md_container_pydantic"
     },
     {
       "label": "build_container() async \u5168\u94fe\u88c5\u914d",
@@ -11447,8 +11854,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "build_container() async \u5168\u94fe\u88c5\u914d",
-      "id": "claude_md_build_container",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "claude_md_build_container"
     },
     {
       "label": "create_app() FastAPI \u5e94\u7528\u5de5\u5382",
@@ -11461,8 +11868,8 @@
       "contributor": null,
       "community": 46,
       "norm_label": "create_app() fastapi \u5e94\u7528\u5de5\u5382",
-      "id": "claude_md_create_app_factory",
-      "community_name": "Project Config, Docker & README"
+      "community_name": "Project Config, Docker & README",
+      "id": "claude_md_create_app_factory"
     },
     {
       "label": "SSE \u7ebf\u4e0a\u534f\u8bae (text/event-stream)",
@@ -11475,8 +11882,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "sse \u7ebf\u4e0a\u534f\u8bae (text/event-stream)",
-      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_sse_protocol",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_sse_protocol"
     },
     {
       "label": "AgentService \u5e94\u7528\u7ea7\u5355\u4f8b (lifespan \u9884\u70ed)",
@@ -11489,8 +11896,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "agentservice \u5e94\u7528\u7ea7\u5355\u4f8b (lifespan \u9884\u70ed)",
-      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_agent_service_singleton",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_agent_service_singleton"
     },
     {
       "label": "AgentStreamEvent \u516d\u7c7b\u4e8b\u4ef6 (token/tool_start/tool_end/done/error/routing)",
@@ -11501,10 +11908,10 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 39,
+      "community": 35,
       "norm_label": "agentstreamevent \u516d\u7c7b\u4e8b\u4ef6 (token/tool_start/tool_end/done/error/routing)",
-      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_event_types",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_event_types"
     },
     {
       "label": "Container \u8f6c\u4e3a Pydantic v2 frozen \u6a21\u578b",
@@ -11517,8 +11924,8 @@
       "captured_at": null,
       "community": 38,
       "norm_label": "container \u8f6c\u4e3a pydantic v2 frozen \u6a21\u578b",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_container_pydantic_model",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_container_pydantic_model"
     },
     {
       "label": "app.state.container \u5355\u6302\u70b9\u8bbe\u8ba1",
@@ -11531,8 +11938,8 @@
       "captured_at": null,
       "community": 38,
       "norm_label": "app.state.container \u5355\u6302\u70b9\u8bbe\u8ba1",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_app_state_container",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_app_state_container"
     },
     {
       "label": "DI provider \u5f52\u4f4d interfaces/api/dependencies.py",
@@ -11545,8 +11952,8 @@
       "captured_at": null,
       "community": 38,
       "norm_label": "di provider \u5f52\u4f4d interfaces/api/dependencies.py",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_di_provider_interfaces",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_di_provider_interfaces"
     },
     {
       "label": "Conversation \u805a\u5408\u6839",
@@ -11559,8 +11966,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "conversation \u805a\u5408\u6839",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_conversation_aggregate",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_conversation_aggregate"
     },
     {
       "label": "SendMessageUseCase \u5bf9\u8bdd\u95ed\u73af\u7528\u4f8b",
@@ -11573,8 +11980,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "sendmessageusecase \u5bf9\u8bdd\u95ed\u73af\u7528\u4f8b",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_send_message_use_case",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_send_message_use_case"
     },
     {
       "label": "ContextWindowPolicy \u4e0a\u4e0b\u6587\u7a97\u53e3\u7b56\u7565",
@@ -11587,8 +11994,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "contextwindowpolicy \u4e0a\u4e0b\u6587\u7a97\u53e3\u7b56\u7565",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_context_window_policy",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_context_window_policy"
     },
     {
       "label": "\u5bf9\u8bdd\u9886\u57df\u4e8b\u4ef6 (ConversationStarted/AssistantResponded/ConversationClosed)",
@@ -11601,8 +12008,8 @@
       "captured_at": null,
       "community": 49,
       "norm_label": "\u5bf9\u8bdd\u9886\u57df\u4e8b\u4ef6 (conversationstarted/assistantresponded/conversationclosed)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_domain_event_model",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_domain_event_model"
     },
     {
       "label": "RecordingAgentService \u6301\u4e45\u5316\u88c5\u9970\u5668",
@@ -11615,8 +12022,8 @@
       "captured_at": null,
       "community": 51,
       "norm_label": "recordingagentservice \u6301\u4e45\u5316\u88c5\u9970\u5668",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_recording_agent_service",
-      "community_name": "Design Docs: Conversation Persistence"
+      "community_name": "Design Docs: Conversation Persistence",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_recording_agent_service"
     },
     {
       "label": "AsyncPostgresSaver LangGraph \u6301\u4e45\u5316 checkpointer",
@@ -11629,8 +12036,8 @@
       "captured_at": null,
       "community": 51,
       "norm_label": "asyncpostgressaver langgraph \u6301\u4e45\u5316 checkpointer",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_async_postgres_saver",
-      "community_name": "Design Docs: Conversation Persistence"
+      "community_name": "Design Docs: Conversation Persistence",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_async_postgres_saver"
     },
     {
       "label": "\u4e09\u5f20\u4e1a\u52a1\u5bf9\u8bdd\u8868 (conversation/turn/message)",
@@ -11643,8 +12050,8 @@
       "captured_at": null,
       "community": 51,
       "norm_label": "\u4e09\u5f20\u4e1a\u52a1\u5bf9\u8bdd\u8868 (conversation/turn/message)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_three_table_schema",
-      "community_name": "Design Docs: Conversation Persistence"
+      "community_name": "Design Docs: Conversation Persistence",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_three_table_schema"
     },
     {
       "label": "IntentRecognizer \u610f\u56fe\u8bc6\u522b\u7aef\u53e3",
@@ -11657,8 +12064,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "intentrecognizer \u610f\u56fe\u8bc6\u522b\u7aef\u53e3",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_intent_recognizer",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_intent_recognizer"
     },
     {
       "label": "RoutingPolicy \u8def\u7531\u88c1\u51b3\u9886\u57df\u670d\u52a1",
@@ -11671,8 +12078,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "routingpolicy \u8def\u7531\u88c1\u51b3\u9886\u57df\u670d\u52a1",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_policy",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_policy"
     },
     {
       "label": "RoutingAgentService \u8def\u7531\u5206\u53d1\u7f16\u6392",
@@ -11685,8 +12092,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "routingagentservice \u8def\u7531\u5206\u53d1\u7f16\u6392",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_agent_service",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_agent_service"
     },
     {
       "label": "AgentRegistry \u591a\u6280\u80fd\u6ce8\u518c\u8868",
@@ -11699,8 +12106,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "agentregistry \u591a\u6280\u80fd\u6ce8\u518c\u8868",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_agent_registry",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_agent_registry"
     },
     {
       "label": "GENERAL_SKILL \u515c\u5e95\u901a\u7528\u6280\u80fd",
@@ -11713,8 +12120,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "general_skill \u515c\u5e95\u901a\u7528\u6280\u80fd",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_general_skill",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_general_skill"
     },
     {
       "label": "LlmIntentRecognizer \u7ed3\u6784\u5316\u8f93\u51fa\u5b9e\u73b0",
@@ -11727,8 +12134,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "llmintentrecognizer \u7ed3\u6784\u5316\u8f93\u51fa\u5b9e\u73b0",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_llm_intent_recognizer",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_llm_intent_recognizer"
     },
     {
       "label": "LangGraph \u9000\u5316\u4e3a\u65e0\u72b6\u6001\u6267\u884c\u5668",
@@ -11741,8 +12148,8 @@
       "captured_at": null,
       "community": 35,
       "norm_label": "langgraph \u9000\u5316\u4e3a\u65e0\u72b6\u6001\u6267\u884c\u5668",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_langgraph_stateless",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_langgraph_stateless"
     },
     {
       "label": "\u805a\u5408\u6839\u4f7f\u7528 Pydantic + PrivateAttr (\u504f\u79bb\u8bbe\u8ba1 D5)",
@@ -11755,8 +12162,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "\u805a\u5408\u6839\u4f7f\u7528 pydantic + privateattr (\u504f\u79bb\u8bbe\u8ba1 d5)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_pydantic_private_attr_aggregate",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_pydantic_private_attr_aggregate"
     },
     {
       "label": "AsyncExitStack \u8d44\u6e90\u751f\u547d\u5468\u671f\u7ba1\u7406",
@@ -11769,8 +12176,8 @@
       "captured_at": null,
       "community": 38,
       "norm_label": "asyncexitstack \u8d44\u6e90\u751f\u547d\u5468\u671f\u7ba1\u7406",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_async_exit_stack",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_async_exit_stack"
     },
     {
       "label": "\u57df\u4e8b\u4ef6\u8de8\u6a21\u5757\u89e3\u8026 (\u8fdb\u7a0b\u5185 message bus)",
@@ -11783,8 +12190,8 @@
       "captured_at": null,
       "community": 38,
       "norm_label": "\u57df\u4e8b\u4ef6\u8de8\u6a21\u5757\u89e3\u8026 (\u8fdb\u7a0b\u5185 message bus)",
-      "id": "claude_md_domain_events_cross_module",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "claude_md_domain_events_cross_module"
     },
     {
       "label": "\u6280\u672f\u6808 (FastAPI + SQLAlchemy 2.0 + Pydantic v2 + Alembic)",
@@ -11797,8 +12204,8 @@
       "captured_at": null,
       "community": 49,
       "norm_label": "\u6280\u672f\u6808 (fastapi + sqlalchemy 2.0 + pydantic v2 + alembic)",
-      "id": "claude_md_tech_stack",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "claude_md_tech_stack"
     },
     {
       "label": "Python 3.11 + uv \u5305\u7ba1\u7406\u5668",
@@ -11811,8 +12218,8 @@
       "captured_at": null,
       "community": 49,
       "norm_label": "python 3.11 + uv \u5305\u7ba1\u7406\u5668",
-      "id": "claude_md_uv_and_python_3_11",
-      "community_name": "Design Docs: Bootstrap Composition Root"
+      "community_name": "Design Docs: Bootstrap Composition Root",
+      "id": "claude_md_uv_and_python_3_11"
     },
     {
       "label": "get_agent_service DI provider",
@@ -11825,8 +12232,8 @@
       "captured_at": null,
       "community": 35,
       "norm_label": "get_agent_service di provider",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_get_agent_service_di",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_get_agent_service_di"
     },
     {
       "label": "sse-starlette EventSourceResponse \u5fc3\u8df3+\u65ad\u8fde\u68c0\u6d4b",
@@ -11839,8 +12246,8 @@
       "captured_at": null,
       "community": 35,
       "norm_label": "sse-starlette eventsourceresponse \u5fc3\u8df3+\u65ad\u8fde\u68c0\u6d4b",
-      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_sse_starlette_event_source_response",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_specs_2026_07_19_agent_sse_streaming_design_sse_starlette_event_source_response"
     },
     {
       "label": "SqlAlchemyConversationRepository \u4ed3\u50a8\u5b9e\u73b0",
@@ -11853,8 +12260,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "sqlalchemyconversationrepository \u4ed3\u50a8\u5b9e\u73b0",
-      "id": "docs_superpowers_plans_2026_07_19_conversation_aggregate_sqlalchemy_repository_implementation",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_plans_2026_07_19_conversation_aggregate_sqlalchemy_repository_implementation"
     },
     {
       "label": "InMemoryEventPublisher \u8fdb\u7a0b\u5185\u4e8b\u4ef6\u53d1\u5e03\u5668",
@@ -11867,8 +12274,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "inmemoryeventpublisher \u8fdb\u7a0b\u5185\u4e8b\u4ef6\u53d1\u5e03\u5668",
-      "id": "docs_superpowers_plans_2026_07_19_conversation_aggregate_in_memory_event_publisher",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_plans_2026_07_19_conversation_aggregate_in_memory_event_publisher"
     },
     {
       "label": "HTTP \u8bf7\u6c42/\u54cd\u5e94 Schema (ChatRequest/ChatResponse/ChatMessage)",
@@ -11881,8 +12288,8 @@
       "captured_at": null,
       "community": 35,
       "norm_label": "http \u8bf7\u6c42/\u54cd\u5e94 schema (chatrequest/chatresponse/chatmessage)",
-      "id": "docs_superpowers_plans_2026_07_19_agent_sse_streaming_core_schema",
-      "community_name": "Design Docs: Agent SSE Streaming"
+      "community_name": "Design Docs: Agent SSE Streaming",
+      "id": "docs_superpowers_plans_2026_07_19_agent_sse_streaming_core_schema"
     },
     {
       "label": "TokenUsage \u503c\u5bf9\u8c61 (prompt/completion/total tokens)",
@@ -11895,8 +12302,8 @@
       "captured_at": null,
       "community": 51,
       "norm_label": "tokenusage \u503c\u5bf9\u8c61 (prompt/completion/total tokens)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_token_usage",
-      "community_name": "Design Docs: Conversation Persistence"
+      "community_name": "Design Docs: Conversation Persistence",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_token_usage"
     },
     {
       "label": "all_routers \u6c47\u603b\u5217\u8868 (routes/__init__.py)",
@@ -11909,8 +12316,8 @@
       "captured_at": null,
       "community": 38,
       "norm_label": "all_routers \u6c47\u603b\u5217\u8868 (routes/__init__.py)",
-      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_all_routers",
-      "community_name": "Project CLAUDE.md Conventions"
+      "community_name": "Project CLAUDE.md Conventions",
+      "id": "docs_superpowers_specs_2026_07_19_bootstrap_composition_root_design_all_routers"
     },
     {
       "label": "ConversationRepository \u4ed3\u50a8\u7aef\u53e3 (domain ABC)",
@@ -11923,8 +12330,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "conversationrepository \u4ed3\u50a8\u7aef\u53e3 (domain abc)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_conversation_repository_port",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_conversation_repository_port"
     },
     {
       "label": "DomainEventPublisher \u7aef\u53e3 (application Protocol)",
@@ -11937,8 +12344,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "domaineventpublisher \u7aef\u53e3 (application protocol)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_domain_event_publisher_port",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_domain_event_publisher_port"
     },
     {
       "label": "RoutingConfig \u503c\u5bf9\u8c61 (\u7f6e\u4fe1\u5ea6\u9608\u503c+\u515c\u5e95\u6280\u80fd\u540d)",
@@ -11951,8 +12358,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "routingconfig \u503c\u5bf9\u8c61 (\u7f6e\u4fe1\u5ea6\u9608\u503c+\u515c\u5e95\u6280\u80fd\u540d)",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_config",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_config"
     },
     {
       "label": "IntentClassification \u503c\u5bf9\u8c61 (target_skill+confidence+reason)",
@@ -11965,8 +12372,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "intentclassification \u503c\u5bf9\u8c61 (target_skill+confidence+reason)",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_intent_classification",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_intent_classification"
     },
     {
       "label": "RoutingDecision \u503c\u5bf9\u8c61 (skill_name+is_fallback)",
@@ -11979,8 +12386,8 @@
       "captured_at": null,
       "community": 39,
       "norm_label": "routingdecision \u503c\u5bf9\u8c61 (skill_name+is_fallback)",
-      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_decision",
-      "community_name": "Design Docs: Intent Routing"
+      "community_name": "Design Docs: Intent Routing",
+      "id": "docs_superpowers_specs_2026_07_19_intent_routing_design_routing_decision"
     },
     {
       "label": "best-effort \u843d\u5e93\u7b56\u7565 (\u5931\u8d25\u4ec5\u544a\u8b66\u4e0d\u963b\u65ad\u5bf9\u8bdd)",
@@ -11993,8 +12400,8 @@
       "captured_at": null,
       "community": 51,
       "norm_label": "best-effort \u843d\u5e93\u7b56\u7565 (\u5931\u8d25\u4ec5\u544a\u8b66\u4e0d\u963b\u65ad\u5bf9\u8bdd)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_best_effort_record",
-      "community_name": "Design Docs: Conversation Persistence"
+      "community_name": "Design Docs: Conversation Persistence",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_persistence_design_best_effort_record"
     },
     {
       "label": "\u6d88\u606f\u53ea\u8ffd\u52a0\u4e0d\u4fee\u6539 (\u5ba1\u8ba1\u5b8c\u6574\u6027)",
@@ -12007,8 +12414,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "\u6d88\u606f\u53ea\u8ffd\u52a0\u4e0d\u4fee\u6539 (\u5ba1\u8ba1\u5b8c\u6574\u6027)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_append_only_messages",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_append_only_messages"
     },
     {
       "label": "\u7a97\u53e3\u52a0\u8f7d + \u589e\u91cf\u843d\u5e93 (\u805a\u5408\u4f53\u91cf\u5904\u7406)",
@@ -12021,8 +12428,8 @@
       "captured_at": null,
       "community": 36,
       "norm_label": "\u7a97\u53e3\u52a0\u8f7d + \u589e\u91cf\u843d\u5e93 (\u805a\u5408\u4f53\u91cf\u5904\u7406)",
-      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_windowed_load",
-      "community_name": "Design Docs: Conversation Aggregate"
+      "community_name": "Design Docs: Conversation Aggregate",
+      "id": "docs_superpowers_specs_2026_07_19_conversation_aggregate_design_windowed_load"
     }
   ],
   "links": [
@@ -33877,6 +34284,402 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L189",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_10_\u6d4b\u8bd5\u7b56\u7565_unittest_\u4e0d\u4f9d\u8d56\u771f_postgres",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L198",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_11_\u975e\u76ee\u6807_yagni_\u4e0e\u6f14\u8fdb\u9884\u7559",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_1_\u80cc\u666f\u4e0e\u76ee\u6807",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_2_\u5173\u952e\u51b3\u7b56_\u5df2\u4e0e\u7528\u6237\u786e\u8ba4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_3_\u8303\u56f4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_4_\u67b6\u6784\u603b\u89c8",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_\u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_\u7528\u4f8b\u4e0e\u4e00\u81f4\u6027",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_7_\u63a5\u53e3\u5c42\u884c\u4e3a",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_8_\u57fa\u7840\u8bbe\u65bd\u4e0e\u88c5\u914d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_langgraph_\u8bb0\u5fc6\u63a5\u7ba1_checkpointer_\u591a\u8f6e\u8bb0\u5fc6\u4e0e\u4f1a\u8bdd\u6a21\u578b\u7eaf\u5b58\u50a8\u5316\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_9_\u9519\u8bef\u5904\u7406",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_2_\u5173\u952e\u51b3\u7b56_\u5df2\u4e0e\u7528\u6237\u786e\u8ba4",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_\u4e0e_7_19_\u8bbe\u8ba1\u7684\u51b3\u7b56\u5dee\u5f02_\u8bb0\u5f55\u5728\u6848",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_4_\u67b6\u6784\u603b\u89c8",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_\u7ec4\u4ef6\u53bb\u7559",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_\u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_1_\u72b6\u6001_\u968f_checkpoint_\u6301\u4e45\u5316",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_\u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_2_routingmiddleware_\u81ea\u7814",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_\u56fe\u72b6\u6001\u4e0e\u4e2d\u95f4\u4ef6\u5951\u7ea6",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_5_3_\u4e0a\u4e0b\u6587\u5de5\u7a0b\u6269\u5c55\u70b9_\u538b\u7f29_\u89c4\u5212",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_\u7528\u4f8b\u4e0e\u4e00\u81f4\u6027",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_1_sendmessageusecase_\u7b80\u5316\u540e",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-langgraph-memory-design.md",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_\u7528\u4f8b\u4e0e\u4e00\u81f4\u6027",
+      "target": "docs_superpowers_specs_2026_07_20_langgraph_memory_design_6_2_\u4e00\u81f4\u6027\u6a21\u578b",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u4ed3\u50a8\u63a5\u53e3_domain_\u5b9a\u4e49_infrastructure_\u5b9e\u73b0",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u56de\u653e\u89c6\u56fe_5_1_\u6848\u4f8b\u5f62\u6001",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u5b50\u57df\u5b9a\u4f4d",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L174",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u5b9e\u65bd\u63d0\u793a_\u4f9b\u540e\u7eed\u8ba1\u5212\u53c2\u8003_\u975e\u672c\u671f\u8303\u56f4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u5df2\u5b9a\u51b3\u7b56_\u542b\u7406\u7531",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u6838\u5fc3\u6a21\u578b",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u751f\u547d\u5468\u671f\u4e0e\u4e0d\u53d8\u91cf",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u80cc\u666f\u4e0e\u76ee\u6807",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u8868\u7ed3\u6784_postgresql_3_\u5f20_append_only",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u91c7\u96c6\u6620\u5c04_\u8bba\u8bc1\u6a21\u578b\u5145\u5206\u6027_\u5b9e\u65bd\u5728\u540e\u7eed\u8fed\u4ee3",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L168",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_agent_\u8ba4\u77e5\u53ef\u89c2\u6d4b\u6027_trace_span_event_\u4f1a\u8bdd\u6a21\u578b\u8bbe\u8ba1",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u975e\u76ee\u6807_yagni_\u4e0e\u6f14\u8fdb\u9884\u7559",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u6838\u5fc3\u6a21\u578b",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_id_\u503c\u5bf9\u8c61",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u6838\u5fc3\u6a21\u578b",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_span_\u5185\u90e8\u5b9e\u4f53_\u4e0d\u53ef\u5355\u72ec\u5f15\u7528",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u6838\u5fc3\u6a21\u578b",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_trace_\u805a\u5408\u6839",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/superpowers/specs/2026-07-20-trace-observability-model-design.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_\u6838\u5fc3\u6a21\u578b",
+      "target": "docs_superpowers_specs_2026_07_20_trace_observability_model_design_traceevent_frozen_\u503c\u5bf9\u8c61",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "conceptually_related_to",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -34876,5 +35679,5 @@
       "source_file": "docs/superpowers/specs/2026-07-19-intent-routing-design.md"
     }
   ],
-  "built_at_commit": "307ad19c5b68783c790468509a6ea3d1bc09c01c"
+  "built_at_commit": "0bd5f2fc0e962ead9cfda0ca7e662090ec1bb64e"
 }
